@@ -13,8 +13,7 @@ struct ContentView: View {
  
     var body: some View {
         TabView(selection: $selection){
-            Text("All")
-                .font(.title)
+            AllLog()
                 .tabItem {
                     VStack {
                         Image(systemName: "heart.fill")
@@ -22,8 +21,7 @@ struct ContentView: View {
                     }
                 }
                 .tag(0)
-            Text("Second View")
-                .font(.title)
+            MoodLog()
                 .tabItem {
                     VStack {
                         Image(systemName: "heart.slash.fill")
@@ -31,8 +29,7 @@ struct ContentView: View {
                     }
                 }
                 .tag(1)
-            Text("Second View")
-            .font(.title)
+            HealthLog()
             .tabItem {
                 VStack {
                     Image(systemName: "heart.circle.fill")
@@ -40,8 +37,7 @@ struct ContentView: View {
                 }
             }
             .tag(2)
-            Text("Second View")
-            .font(.title)
+            Settings()
             .tabItem {
                 VStack {
                     Image(systemName: "gear")

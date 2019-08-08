@@ -14,6 +14,11 @@
 		37C8573322FC409C003A6987 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37C8573222FC409C003A6987 /* Assets.xcassets */; };
 		37C8573622FC409C003A6987 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37C8573522FC409C003A6987 /* Preview Assets.xcassets */; };
 		37C8573922FC409C003A6987 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37C8573722FC409C003A6987 /* LaunchScreen.storyboard */; };
+		37C8574322FC4253003A6987 /* AllLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C8574222FC4253003A6987 /* AllLog.swift */; };
+		37C8574522FC4285003A6987 /* MoodLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C8574422FC4285003A6987 /* MoodLog.swift */; };
+		37C8574722FC4297003A6987 /* HealthLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C8574622FC4297003A6987 /* HealthLog.swift */; };
+		37C8574922FC42A6003A6987 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C8574822FC42A6003A6987 /* Settings.swift */; };
+		37C8574C22FC4351003A6987 /* AllRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C8574B22FC4351003A6987 /* AllRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,11 @@
 		37C8573522FC409C003A6987 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		37C8573822FC409C003A6987 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37C8573A22FC409C003A6987 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37C8574222FC4253003A6987 /* AllLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLog.swift; sourceTree = "<group>"; };
+		37C8574422FC4285003A6987 /* MoodLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodLog.swift; sourceTree = "<group>"; };
+		37C8574622FC4297003A6987 /* HealthLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthLog.swift; sourceTree = "<group>"; };
+		37C8574822FC42A6003A6987 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		37C8574B22FC4351003A6987 /* AllRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,8 +92,21 @@
 		37C8574122FC4157003A6987 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				37C8574A22FC433E003A6987 /* Logs */,
+				37C8574222FC4253003A6987 /* AllLog.swift */,
+				37C8574422FC4285003A6987 /* MoodLog.swift */,
+				37C8574622FC4297003A6987 /* HealthLog.swift */,
+				37C8574822FC42A6003A6987 /* Settings.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		37C8574A22FC433E003A6987 /* Logs */ = {
+			isa = PBXGroup;
+			children = (
+				37C8574B22FC4351003A6987 /* AllRow.swift */,
+			);
+			path = Logs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,10 +180,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37C8574322FC4253003A6987 /* AllLog.swift in Sources */,
+				37C8574522FC4285003A6987 /* MoodLog.swift in Sources */,
+				37C8574922FC42A6003A6987 /* Settings.swift in Sources */,
+				37C8574722FC4297003A6987 /* HealthLog.swift in Sources */,
 				37C8572F22FC4097003A6987 /* moodtracker.xcdatamodeld in Sources */,
 				37C8572A22FC4097003A6987 /* AppDelegate.swift in Sources */,
 				37C8573122FC4097003A6987 /* ContentView.swift in Sources */,
 				37C8572C22FC4097003A6987 /* SceneDelegate.swift in Sources */,
+				37C8574C22FC4351003A6987 /* AllRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
