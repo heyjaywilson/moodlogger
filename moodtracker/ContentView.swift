@@ -13,12 +13,12 @@ struct ContentView: View {
  
     var body: some View {
         TabView(selection: $selection){
-            Text("First View")
+            Text("All")
                 .font(.title)
                 .tabItem {
                     VStack {
-                        Image("first")
-                        Text("First")
+                        Image(systemName: "heart.fill")
+                        Text("All")
                     }
                 }
                 .tag(0)
@@ -26,11 +26,29 @@ struct ContentView: View {
                 .font(.title)
                 .tabItem {
                     VStack {
-                        Image("second")
-                        Text("Second")
+                        Image(systemName: "heart.slash.fill")
+                        Text("Mood Only")
                     }
                 }
                 .tag(1)
+            Text("Second View")
+            .font(.title)
+            .tabItem {
+                VStack {
+                    Image(systemName: "heart.circle.fill")
+                    Text("Health Only")
+                }
+            }
+            .tag(2)
+            Text("Second View")
+            .font(.title)
+            .tabItem {
+                VStack {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
+            }
+            .tag(1)
         }
     }
 }

@@ -58,6 +58,7 @@
 		37C8572822FC4097003A6987 /* moodtracker */ = {
 			isa = PBXGroup;
 			children = (
+				37C8574122FC4157003A6987 /* Views */,
 				37C8572922FC4097003A6987 /* AppDelegate.swift */,
 				37C8572B22FC4097003A6987 /* SceneDelegate.swift */,
 				37C8573022FC4097003A6987 /* ContentView.swift */,
@@ -76,6 +77,13 @@
 				37C8573522FC409C003A6987 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		37C8574122FC4157003A6987 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
