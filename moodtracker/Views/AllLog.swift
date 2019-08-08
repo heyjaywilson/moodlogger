@@ -10,7 +10,9 @@ import SwiftUI
 
 struct AllLog: View {
     var body: some View {
-        Text("All Log")
+        List {
+            AllLogRow()
+        }
     }
 }
 
