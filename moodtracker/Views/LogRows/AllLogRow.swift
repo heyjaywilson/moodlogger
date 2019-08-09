@@ -11,14 +11,15 @@ import SwiftUI
 struct AllLogRow: View {
     var body: some View {
         HStack {
-            MonthDate(month: "Aug", day: "01")
-            VStack{
+            MonthDate(month: "Aug", day: "\(1)")
+            VStack(alignment: .leading){
                 MoodSmall(moods:["🙁","😐", "🙂"])
-            }
+                    .padding(.bottom)
+                SleepSmall(amountSleep: 8.4)
+            }.padding(.leading)
         }
     }
 }
-
 #if DEBUG
 struct AllLogRow_Previews: PreviewProvider {
     static var previews: some View {
