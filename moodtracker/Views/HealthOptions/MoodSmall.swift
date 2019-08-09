@@ -14,6 +14,7 @@ struct MoodSmall: View {
     var body: some View {
         Text("\(combineMoods())")
             .lineLimit(nil)
+            .font(.subheadline)
     }
     
     func combineMoods() -> String {

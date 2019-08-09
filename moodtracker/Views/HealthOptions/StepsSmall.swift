@@ -12,7 +12,8 @@ struct StepsSmall: View {
     var steps: Int
     var body: some View {
         HStack {
-            Text("👣: \(steps)")
+            Text("👣")
+            Text("\(steps)")
         }
     }
 }

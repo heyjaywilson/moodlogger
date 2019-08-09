@@ -9,9 +9,11 @@
 import SwiftUI
 
 struct AllLog: View {
+    @ObservedObject var data: SampleUserData = SampleUserData()
+    
     var body: some View {
         List {
-            AllLogRow()
+            AllLogRow(mood: data.sampleData[0])
         }
     }
 }

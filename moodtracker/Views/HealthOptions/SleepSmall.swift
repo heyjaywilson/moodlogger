@@ -11,7 +11,10 @@ import SwiftUI
 struct SleepSmall: View {
     var amountSleep: Double
     var body: some View {
-        Text("💤: \(amountSleep)")
+        HStack {
+            Text("💤")
+            Text("\(amountSleep)")
+        }
     }
 }
 
