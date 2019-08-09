@@ -12,18 +12,23 @@ struct MoodSmall: View {
     var moods: [String]
     
     var body: some View {
-        HStack {
-            ForEach(0..<moods.count) { index in
-                Text("\(self.moods[index])")
-            }
+        Text("\(combineMoods())")
+            .lineLimit(nil)
+    }
+    
+    func combineMoods() -> String {
+        var returnString: String = ""
+        for mood in self.moods {
+            returnString = returnString + mood
         }
+        return returnString
     }
 }
 
 #if DEBUG
 struct MoodSmall_Previews: PreviewProvider {
     static var previews: some View {
-        MoodSmall(moods: ["😃"])
+        MoodSmall(moods: ["🙁","😐", "🙂", "😃", "👍","🙁","😐","🙁","😐","🙁","😐", "🙂", "😃", "👍","🙁","😐","🙁","😐"])
     }
 }
 #endif

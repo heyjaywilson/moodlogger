@@ -13,9 +13,13 @@ struct AllLogRow: View {
         HStack {
             MonthDate(month: "Aug", day: "\(1)")
             VStack(alignment: .leading){
-                MoodSmall(moods:["🙁","😐", "🙂"])
-                    .padding(.bottom)
+                MoodSmall(moods:["🙁","😐", "🙂", "😃", "👍","🙁","😐","🙁","😐"])
                 SleepSmall(amountSleep: 8.4)
+            }.padding(.leading)
+            VStack(alignment: .leading) {
+                MoveSmall()
+                ExerciseSmall()
+                StandSmall()
             }.padding(.leading)
         }
     }
