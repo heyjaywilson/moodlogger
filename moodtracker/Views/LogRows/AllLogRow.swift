@@ -37,8 +37,6 @@ struct AllLogRow: View {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd hh:mm"
         let datelogged = formatter.date(from: "\(mood.date_logged) \(mood.time_logged)")
-        formatter.dateStyle = .medium
-        print(datelogged)
         let requestedComponents: Set<Calendar.Component> = [
             .year,
             .month,
