@@ -15,6 +15,7 @@ struct AllLogRow: View {
             VStack(alignment: .leading){
                 MoodSmall(moods:["🙁","😐", "🙂", "😃", "👍","🙁","😐","🙁","😐"])
                 SleepSmall(amountSleep: 8.4)
+                StepsSmall(steps: 10000)
             }.padding(.leading)
             VStack(alignment: .leading) {
                 MoveSmall()
