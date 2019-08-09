@@ -1,20 +1,12 @@
 [
     {
+        "id": 0,
         "date_logged": "2019-08-01",
-        "time_logged": "1:00",
-        "mood": "😃",
-        "note": "Happy!"
+        "moods": ["😃", "🙁"]
     },
     {
-        "date_logged": "2019-08-01",
-        "time_logged": "12:00",
-        "mood": "🙁",
-        "note": "Not happy"
-    },
-    {
+        "id": 1,
         "date_logged": "2019-08-02",
-        "time_logged": "1:00",
-        "mood": "😴",
-        "note": "I should go to bed"
+        "moods": ["😃", "🙁", "😴"]
     }
 ]

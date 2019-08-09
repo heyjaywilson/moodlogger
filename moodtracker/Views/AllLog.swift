@@ -12,8 +12,8 @@ struct AllLog: View {
     @ObservedObject var data: SampleUserData = SampleUserData()
     
     var body: some View {
-        List {
-            AllLogRow(mood: data.sampleData[0])
+        List(data.sampleData, id: \.id) { entry in
+            AllLogRow(mood: entry)
         }
     }
 }

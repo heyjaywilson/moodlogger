@@ -9,8 +9,7 @@
 import Foundation
 
 struct Mood: Codable {
+    let id: Int
     let date_logged: String
-    let time_logged: String
-    let mood: String
-    let note: String
+    let moods: [String]
 }
