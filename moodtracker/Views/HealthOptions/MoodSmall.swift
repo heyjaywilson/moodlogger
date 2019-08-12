@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct MoodSmall: View {
-    var moods: [String]
+    var moods: [Mood]
     
     var body: some View {
         Text("\(combineMoods())")
@@ -20,7 +20,7 @@ struct MoodSmall: View {
     func combineMoods() -> String {
         var returnString: String = ""
         for mood in self.moods {
-            returnString = returnString + mood
+            returnString = returnString + mood.mood
         }
         return returnString
     }
@@ -29,7 +29,7 @@ struct MoodSmall: View {
 #if DEBUG
 struct MoodSmall_Previews: PreviewProvider {
     static var previews: some View {
-        MoodSmall(moods: ["🙁","😐", "🙂", "😃", "👍","🙁","😐","🙁","😐","🙁","😐", "🙂", "😃", "👍","🙁","😐","🙁","😐"])
+        MoodSmall(moods: [Mood(mood: "😃", date_logged: Date()),Mood(mood: "🙁", date_logged: Date()),Mood(mood: "😎", date_logged: Date())])
     }
 }
 #endif

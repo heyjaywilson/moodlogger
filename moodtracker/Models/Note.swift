@@ -1,16 +1,15 @@
 //
-//  Mood.swift
+//  Note.swift
 //  moodtracker
 //
-//  Created by Maegan Wilson on 8/9/19.
+//  Created by Maegan Wilson on 8/11/19.
 //  Copyright © 2019 MW. All rights reserved.
 //
 
 import Foundation
 
-struct Mood: Codable {
-    let id: UUID = UUID()
-    var mood: String
+struct Note {
+    var text: String
     var date_logged: Date
     
     func returnDateString() -> String{

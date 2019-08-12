@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3719E4D022FD892C00678CD9 /* mooddata.json in Resources */ = {isa = PBXBuildFile; fileRef = 3719E4CF22FD892C00678CD9 /* mooddata.json */; };
 		372F6F1C22FD0A9A007E5842 /* ExerciseSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F6F1B22FD0A9A007E5842 /* ExerciseSmall.swift */; };
 		372F6F1E22FD0BDB007E5842 /* StandSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F6F1D22FD0BDB007E5842 /* StandSmall.swift */; };
 		3730803C22FD12350032E400 /* StepsSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3730803B22FD12350032E400 /* StepsSmall.swift */; };
 		37666E4F22FCA188008455BE /* SleepSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37666E4E22FCA188008455BE /* SleepSmall.swift */; };
 		37666E5122FCA2DA008455BE /* MoveSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37666E5022FCA2DA008455BE /* MoveSmall.swift */; };
-		37C36F3E22FD8AB10048C2D6 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C36F3D22FD8AB10048C2D6 /* SampleData.swift */; };
+		37AEE6322300AF8E006EC8EC /* LogDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AEE6312300AF8E006EC8EC /* LogDay.swift */; };
+		37AEE6342300AFF7006EC8EC /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AEE6332300AFF7006EC8EC /* Note.swift */; };
+		37AEE6372300B076006EC8EC /* AllData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AEE6362300B076006EC8EC /* AllData.swift */; };
 		37C36F4122FD8B0E0048C2D6 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C36F4022FD8B0E0048C2D6 /* Mood.swift */; };
-		37C36F4322FD8E7B0048C2D6 /* SampleUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C36F4222FD8E7B0048C2D6 /* SampleUserData.swift */; };
 		37C8572A22FC4097003A6987 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C8572922FC4097003A6987 /* AppDelegate.swift */; };
 		37C8572C22FC4097003A6987 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C8572B22FC4097003A6987 /* SceneDelegate.swift */; };
 		37C8572F22FC4097003A6987 /* moodtracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37C8572D22FC4097003A6987 /* moodtracker.xcdatamodeld */; };
@@ -33,15 +33,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3719E4CF22FD892C00678CD9 /* mooddata.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mooddata.json; sourceTree = "<group>"; };
 		372F6F1B22FD0A9A007E5842 /* ExerciseSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSmall.swift; sourceTree = "<group>"; };
 		372F6F1D22FD0BDB007E5842 /* StandSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandSmall.swift; sourceTree = "<group>"; };
 		3730803B22FD12350032E400 /* StepsSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsSmall.swift; sourceTree = "<group>"; };
 		37666E4E22FCA188008455BE /* SleepSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepSmall.swift; sourceTree = "<group>"; };
 		37666E5022FCA2DA008455BE /* MoveSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveSmall.swift; sourceTree = "<group>"; };
-		37C36F3D22FD8AB10048C2D6 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
+		37AEE6312300AF8E006EC8EC /* LogDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDay.swift; sourceTree = "<group>"; };
+		37AEE6332300AFF7006EC8EC /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		37AEE6362300B076006EC8EC /* AllData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllData.swift; sourceTree = "<group>"; };
 		37C36F4022FD8B0E0048C2D6 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
-		37C36F4222FD8E7B0048C2D6 /* SampleUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleUserData.swift; sourceTree = "<group>"; };
 		37C8572622FC4097003A6987 /* moodtracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodtracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C8572922FC4097003A6987 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37C8572B22FC4097003A6987 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,20 +71,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		37C36F3C22FD8A590048C2D6 /* Resources */ = {
+		37AEE6352300B059006EC8EC /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				3719E4CF22FD892C00678CD9 /* mooddata.json */,
-				37C36F3D22FD8AB10048C2D6 /* SampleData.swift */,
+				37AEE6362300B076006EC8EC /* AllData.swift */,
 			);
-			path = Resources;
+			path = Data;
 			sourceTree = "<group>";
 		};
 		37C36F3F22FD8B020048C2D6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				37C36F4022FD8B0E0048C2D6 /* Mood.swift */,
-				37C36F4222FD8E7B0048C2D6 /* SampleUserData.swift */,
+				37AEE6312300AF8E006EC8EC /* LogDay.swift */,
+				37AEE6332300AFF7006EC8EC /* Note.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -108,8 +108,8 @@
 		37C8572822FC4097003A6987 /* moodtracker */ = {
 			isa = PBXGroup;
 			children = (
+				37AEE6352300B059006EC8EC /* Data */,
 				37C36F3F22FD8B020048C2D6 /* Models */,
-				37C36F3C22FD8A590048C2D6 /* Resources */,
 				37C8574122FC4157003A6987 /* Views */,
 				37C8572922FC4097003A6987 /* AppDelegate.swift */,
 				37C8572B22FC4097003A6987 /* SceneDelegate.swift */,
@@ -234,7 +234,6 @@
 			files = (
 				37C8573922FC409C003A6987 /* LaunchScreen.storyboard in Resources */,
 				37C8573622FC409C003A6987 /* Preview Assets.xcassets in Resources */,
-				3719E4D022FD892C00678CD9 /* mooddata.json in Resources */,
 				37C8573322FC409C003A6987 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,7 +246,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				37C8574322FC4253003A6987 /* AllLog.swift in Sources */,
+				37AEE6372300B076006EC8EC /* AllData.swift in Sources */,
 				37C8575022FC47F1003A6987 /* MonthDate.swift in Sources */,
+				37AEE6342300AFF7006EC8EC /* Note.swift in Sources */,
 				37C8574522FC4285003A6987 /* MoodLog.swift in Sources */,
 				3730803C22FD12350032E400 /* StepsSmall.swift in Sources */,
 				37C8574922FC42A6003A6987 /* Settings.swift in Sources */,
@@ -257,9 +258,8 @@
 				37C8572A22FC4097003A6987 /* AppDelegate.swift in Sources */,
 				37C8575322FC4867003A6987 /* AllLogRow.swift in Sources */,
 				37C36F4122FD8B0E0048C2D6 /* Mood.swift in Sources */,
+				37AEE6322300AF8E006EC8EC /* LogDay.swift in Sources */,
 				37C8573122FC4097003A6987 /* ContentView.swift in Sources */,
-				37C36F4322FD8E7B0048C2D6 /* SampleUserData.swift in Sources */,
-				37C36F3E22FD8AB10048C2D6 /* SampleData.swift in Sources */,
 				37666E4F22FCA188008455BE /* SleepSmall.swift in Sources */,
 				37C8572C22FC4097003A6987 /* SceneDelegate.swift in Sources */,
 				37C8575522FC48C4003A6987 /* MoodSmall.swift in Sources */,

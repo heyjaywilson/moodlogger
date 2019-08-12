@@ -9,11 +9,20 @@
 import SwiftUI
 
 struct AllLog: View {
-    @ObservedObject var data: SampleUserData = SampleUserData()
+    @EnvironmentObject var data: AllData
     
     var body: some View {
-        List(data.sampleData, id: \.id) { entry in
-            AllLogRow(mood: entry)
+        VStack {
+            Button(action: {
+                self.data.add(mood: Mood(mood: "😃", date_logged: Date()))
+            }) {
+                Text("Add Mood")
+            }
+            List(data.logs, id: \.id) { entry in
+                AllLogRow(logs: entry).onAppear {
+                    print(entry.id)
+                }
+            }
         }
     }
 }

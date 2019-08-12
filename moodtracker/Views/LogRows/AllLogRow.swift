@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AllLogRow: View {
-    var mood: Mood
+    var logs: LogDay
     
     @State private var month = ""
     @State private var day = ""
@@ -18,7 +18,7 @@ struct AllLogRow: View {
         HStack(spacing: 25) {
             MonthDate(month: month, day: day)
             VStack(alignment: .leading){
-                MoodSmall(moods: mood.moods)
+                MoodSmall(moods: logs.moods)
                 SleepSmall(amountSleep: 8.4)
                 StepsSmall(steps: 10000)
             }.padding(.leading)
@@ -36,7 +36,7 @@ struct AllLogRow: View {
     func formatDate(){
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
-        let datelogged = formatter.date(from: "\(mood.date_logged)")
+        let datelogged = formatter.date(from: "\(logs.date)")
         let requestedComponents: Set<Calendar.Component> = [
             .year,
             .month,
@@ -81,7 +81,7 @@ struct AllLogRow: View {
 #if DEBUG
 struct AllLogRow_Previews: PreviewProvider {
     static var previews: some View {
-        AllLogRow(mood: Mood(id: 0, date_logged: "2019-08-19", moods: ["😃"]))
+        AllLogRow(logs: LogDay(id: 1, moods: [Mood(mood: "🙁", date_logged: Date())], notes: [Note(text: "HI", date_logged: Date())], date: "2019-08-01"))
     }
 }
 #endif
