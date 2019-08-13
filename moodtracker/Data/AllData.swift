@@ -12,21 +12,12 @@ import Combine
 class AllData: ObservableObject {
     let objectWillChange = ObservableObjectPublisher()
     
-    var moods: [Mood] = [] {
-        willSet { self.objectWillChange.send() }
-    }
-    
-    var notes: [Note] = [] {
-        willSet { self.objectWillChange.send() }
-    }
-    
     var logs: [LogDay] = [] {
         willSet { self.objectWillChange.send() }
     }
     
     func add(mood: Mood) {
         let date = mood.returnDateString()
-        moods.append(mood)
         
         if self.logs .isEmpty {
             logs.append(LogDay(id: 1, moods: [mood], notes: [], date: date))
@@ -35,14 +26,20 @@ class AllData: ObservableObject {
             var index = 0
             
             while !breakOut {
-                if index > (self.logs.count) {
+                if (index + 1) > (self.logs.count) || (self.logs.count == 0){
                     let newLog = LogDay(id: index+1, moods: [mood], notes: [], date: date)
                     breakOut = true
                     logs.append(newLog)
-                }
-                if self.logs[index].date == date {
-                    self.logs[index].moods.append(mood)
-                    breakOut = true
+                } else {
+                    
+                    if self.logs[index].date == date {
+                        self.logs[index].moods.append(mood)
+                        self.logs[index].moods.sort{
+                            $0.date_logged < $1.date_logged
+                        }
+                        breakOut = true
+                    }
+                    
                 }
                 index += 1
             }
@@ -51,7 +48,6 @@ class AllData: ObservableObject {
     
     func add(note: Note) {
         let date = note.returnDateString()
-        notes.append(note)
         
         if self.logs .isEmpty {
             logs.append(LogDay(id: 1, moods: [], notes: [note], date: date))
@@ -60,15 +56,20 @@ class AllData: ObservableObject {
             var index = 0
             
             while !breakOut {
-                if index > (self.logs.count) {
+                if (index + 1) > (self.logs.count) || (self.logs.count == 0) {
                     let newLog = LogDay(id: index+1, moods: [], notes: [note], date: date)
                     breakOut = true
                     logs.append(newLog)
+                } else {
+                    if self.logs[index].date == date {
+                        self.logs[index].notes.append(note)
+                        self.logs[index].notes.sort{
+                            $0.date_logged < $1.date_logged
+                        }
+                        breakOut = true
+                    }
                 }
-                if self.logs[index].date == date {
-                    self.logs[index].notes.append(note)
-                    breakOut = true
-                }
+                
                 index += 1
             }
         }

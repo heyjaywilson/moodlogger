@@ -18,17 +18,13 @@ struct AllLog: View {
                 self.showModal.toggle()
             }) {
                 Text("Add Mood")
-            }.sheet(isPresented: $showModal, onDismiss: {
-                print(self.showModal)
-            }) {
+            }.sheet(isPresented: $showModal) {
                 FormMood().environmentObject(self.data)
             }
             
             List(data.logs, id: \.id) { entry in
-                AllLogRow(logs: entry).onAppear {
-                    print(entry.id)
-                }
-            }
+                AllLogRow(logs: entry)
+            }.animation(.default)
         }
     }
 }

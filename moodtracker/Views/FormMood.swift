@@ -12,9 +12,17 @@ struct FormMood: View {
     @Environment(\.presentationMode) var presentation
     @EnvironmentObject var data: AllData
     
-    @State private var newMood: Mood = Mood(mood: "😃", date_logged: Date())
+    @State private var newMood: Mood = Mood(mood: "", date_logged: Date())
     @State private var selection: Int = 0
-    var emojis: [String] = ["😃", "😎", "🙁"]
+    @State private var date_logged: Date = Date()
+    
+    var emojis: [String] = ["😀", "😁", "😂", "🤣", "😃", "😄", "😅", "😆", "😉", "😊", "😋", "😎", "😍", "😘", "🥰", "😗", "😙", "😚", "☺️", "🙂", "🤗", "🤩", "🤔", "🤨", "😐", "😑", "😶", "🙄", "😏", "😣", "😥", "😮", "🤐", "😯", "😪", "😫", "😴", "😌", "😛", "😜", "😝", "🤤", "😒", "😓", "😔", "😕", "🙃", "🤑", "😲", "☹️", "🙁", "😖", "😞", "😟", "😤", "😢", "😭", "😦", "😧", "😨", "😩", "🤯", "😬", "😰", "😱", "🥵", "🥶", "😳", "🤪", "😵", "😡", "😠", "🤬", "😷", "🤒", "🤕", "🤢", "🤮", "🤧", "😇", "🤠", "🤡", "🥳", "🥴", "🥺", "🤥", "🤫", "🤭", "🧐", "🤓", "😈", "👿", "👹", "👺", "💀", "👻", "👽", "🤖", "💩", "😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾"]
+    
+     var dateFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }
     
     var body: some View {
         NavigationView{
@@ -24,6 +32,15 @@ struct FormMood: View {
                         Text(self.emojis[$0]).tag($0)
                     }
                 }
+                
+                DatePicker(selection: $date_logged, displayedComponents: .date){
+                    Text("Date")
+                }
+                
+                DatePicker(selection: $date_logged, displayedComponents: .hourAndMinute){
+                    Text("Time")
+                }
+                
             }
             .navigationBarTitle(Text("Select your Mood"))
             .navigationBarItems(
@@ -44,6 +61,7 @@ struct FormMood: View {
     
     func addMood() {
         newMood.mood = emojis[selection]
+        newMood.date_logged = date_logged
         data.add(mood: newMood)
     }
 }
