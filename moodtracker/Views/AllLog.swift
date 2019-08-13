@@ -10,14 +10,20 @@ import SwiftUI
 
 struct AllLog: View {
     @EnvironmentObject var data: AllData
+    @State private var showModal: Bool = false
     
     var body: some View {
         VStack {
             Button(action: {
-                self.data.add(mood: Mood(mood: "😃", date_logged: Date()))
+                self.showModal.toggle()
             }) {
                 Text("Add Mood")
+            }.sheet(isPresented: $showModal, onDismiss: {
+                print(self.showModal)
+            }) {
+                FormMood().environmentObject(self.data)
             }
+            
             List(data.logs, id: \.id) { entry in
                 AllLogRow(logs: entry).onAppear {
                     print(entry.id)
@@ -29,6 +35,7 @@ struct AllLog: View {
 
 #if DEBUG
 struct AllLog_Previews: PreviewProvider {
+    @EnvironmentObject var data: AllData
     static var previews: some View {
         AllLog()
     }
