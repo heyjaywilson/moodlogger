@@ -22,9 +22,13 @@ struct AllLog: View {
                 FormMood().environmentObject(self.data)
             }
             
-            List(data.logs, id: \.id) { entry in
-                AllLogRow(logs: entry)
-            }.animation(.default)
+            NavigationView{
+                List(data.logs, id: \.id) { entry in
+                    AllLogRow(logs: entry)
+                }.animation(.default)
+                    .navigationBarHidden(true)
+                    .edgesIgnoringSafeArea([.top, .bottom])
+            }
         }
     }
 }

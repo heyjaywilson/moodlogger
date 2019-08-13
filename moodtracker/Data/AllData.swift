@@ -44,13 +44,16 @@ class AllData: ObservableObject {
                 index += 1
             }
         }
+        
+        self.logs.sort {
+            $0.moods[0].date_logged > $1.moods[0].date_logged
+        }
     }
-    
     func add(note: Note) {
         let date = note.returnDateString()
         
         if self.logs .isEmpty {
-            logs.append(LogDay(id: 1, moods: [], notes: [note], date: date))
+            logs.append(LogDay(id: 1, moods: [Mood(mood: "", date_logged: Date())], notes: [note], date: date))
         } else {
             var breakOut = false
             var index = 0
@@ -72,6 +75,10 @@ class AllData: ObservableObject {
                 
                 index += 1
             }
+        }
+        
+        self.logs.sort {
+            $0.moods[0].date_logged > $1.moods[0].date_logged
         }
     }
 }
