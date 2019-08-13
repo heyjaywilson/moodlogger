@@ -24,10 +24,13 @@ struct AllLog: View {
             
             NavigationView{
                 List(data.logs, id: \.id) { entry in
-                    AllLogRow(logs: entry)
-                }.animation(.default)
-                    .navigationBarHidden(true)
-                    .edgesIgnoringSafeArea([.top, .bottom])
+                    NavigationLink(destination: DetailLog(log: entry)) {
+                        AllLogRow(logs: entry)
+                    }
+                }
+                .navigationBarTitle(Text("Logs"))
+                .navigationBarHidden(true)
+                .edgesIgnoringSafeArea([.top, .bottom])
             }
         }
     }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37007AA223031D3600F43C2E /* MoodLarge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37007AA123031D3600F43C2E /* MoodLarge.swift */; };
 		372F6F1C22FD0A9A007E5842 /* ExerciseSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F6F1B22FD0A9A007E5842 /* ExerciseSmall.swift */; };
 		372F6F1E22FD0BDB007E5842 /* StandSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F6F1D22FD0BDB007E5842 /* StandSmall.swift */; };
 		3730803C22FD12350032E400 /* StepsSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3730803B22FD12350032E400 /* StepsSmall.swift */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		37007AA123031D3600F43C2E /* MoodLarge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodLarge.swift; sourceTree = "<group>"; };
 		372F6F1B22FD0A9A007E5842 /* ExerciseSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSmall.swift; sourceTree = "<group>"; };
 		372F6F1D22FD0BDB007E5842 /* StandSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandSmall.swift; sourceTree = "<group>"; };
 		3730803B22FD12350032E400 /* StepsSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsSmall.swift; sourceTree = "<group>"; };
@@ -75,6 +77,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		37007AA023031D2000F43C2E /* Moods */ = {
+			isa = PBXGroup;
+			children = (
+				37C8575422FC48C4003A6987 /* MoodSmall.swift */,
+				37007AA123031D3600F43C2E /* MoodLarge.swift */,
+			);
+			path = Moods;
+			sourceTree = "<group>";
+		};
+		37007AA323031EB000F43C2E /* Sleep */ = {
+			isa = PBXGroup;
+			children = (
+				37666E4E22FCA188008455BE /* SleepSmall.swift */,
+			);
+			path = Sleep;
+			sourceTree = "<group>";
+		};
+		37007AA423031EBB00F43C2E /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				37666E5022FCA2DA008455BE /* MoveSmall.swift */,
+				372F6F1B22FD0A9A007E5842 /* ExerciseSmall.swift */,
+				372F6F1D22FD0BDB007E5842 /* StandSmall.swift */,
+			);
+			path = Activity;
+			sourceTree = "<group>";
+		};
 		37AEE6352300B059006EC8EC /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,11 +183,9 @@
 		37C8574D22FC47D2003A6987 /* HealthOptions */ = {
 			isa = PBXGroup;
 			children = (
-				37C8575422FC48C4003A6987 /* MoodSmall.swift */,
-				37666E4E22FCA188008455BE /* SleepSmall.swift */,
-				37666E5022FCA2DA008455BE /* MoveSmall.swift */,
-				372F6F1B22FD0A9A007E5842 /* ExerciseSmall.swift */,
-				372F6F1D22FD0BDB007E5842 /* StandSmall.swift */,
+				37007AA423031EBB00F43C2E /* Activity */,
+				37007AA323031EB000F43C2E /* Sleep */,
+				37007AA023031D2000F43C2E /* Moods */,
 				3730803B22FD12350032E400 /* StepsSmall.swift */,
 			);
 			path = HealthOptions;
@@ -260,6 +287,7 @@
 				3730803C22FD12350032E400 /* StepsSmall.swift in Sources */,
 				37C8574922FC42A6003A6987 /* Settings.swift in Sources */,
 				37666E5122FCA2DA008455BE /* MoveSmall.swift in Sources */,
+				37007AA223031D3600F43C2E /* MoodLarge.swift in Sources */,
 				37C8574722FC4297003A6987 /* HealthLog.swift in Sources */,
 				37C8572F22FC4097003A6987 /* moodtracker.xcdatamodeld in Sources */,
 				37C8572A22FC4097003A6987 /* AppDelegate.swift in Sources */,
