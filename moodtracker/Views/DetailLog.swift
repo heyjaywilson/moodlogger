@@ -14,6 +14,7 @@ struct DetailLog: View {
     var body: some View {
         ScrollView {
             MoodLarge(moods: log.moods)
+            MoveLarge()
         }
         .navigationBarTitle(Text(log.date))
     }
