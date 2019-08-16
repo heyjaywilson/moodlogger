@@ -68,6 +68,7 @@ class HealthData {
         }
     }
     
+    // - description: Used to get today's activity.
     func getActivityRings() {
         let calendar: Calendar = Calendar.autoupdatingCurrent
         
