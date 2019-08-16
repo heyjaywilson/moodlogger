@@ -43,7 +43,7 @@ class HealthData {
                                                        bodyMassIndex,
                                                        height,
                                                        bodyMass,
-                                                       activeEnergy,
+                                                       activeEnergy, HKObjectType.activitySummaryType(),
                                                        HKObjectType.workoutType()]
         HKHealthStore().requestAuthorization(toShare: healthKitTypesToWrite, read: healthKitTypesToRead) { (success, error) in
             completion(success, error)
@@ -66,5 +66,32 @@ class HealthData {
             
             return (age, unwrappedBiologicalSex)
         }
+    }
+    
+    func getActivityRings() {
+        let calendar: Calendar = Calendar.autoupdatingCurrent
+        
+        var dateComponents: DateComponents = calendar.dateComponents([.year, .month, .day], from: Date())
+        
+        dateComponents.calendar = calendar
+        let predicate: NSPredicate = HKQuery.predicateForActivitySummary(with: dateComponents)
+        
+        let query = HKActivitySummaryQuery(predicate: predicate) { (query, summaries, error) in
+            guard let summaries = summaries, summaries.count > 0
+                else {
+                    return
+            }
+            let energyUnit = HKUnit.kilocalorie()
+            let standUnit = HKUnit.count()
+            let exerciseUnit = HKUnit.second()
+            
+            for summary in summaries {
+                print(summary.activeEnergyBurned.doubleValue(for: energyUnit))
+                print(summary.appleStandHours.doubleValue(for: standUnit))
+                print(summary.appleExerciseTime.doubleValue(for: exerciseUnit))
+            }
+        }
+        
+        hkstore.execute(query)
     }
 }

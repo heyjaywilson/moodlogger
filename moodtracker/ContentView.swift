@@ -46,6 +46,8 @@ struct ContentView: View {
                 }
             }
             .tag(1)
+        }.onAppear {
+            self.data.health.getActivityRings()
         }
     }
 }

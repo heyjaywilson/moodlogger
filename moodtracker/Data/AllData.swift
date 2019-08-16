@@ -11,6 +11,7 @@ import Combine
 
 class AllData: ObservableObject {
     let objectWillChange = ObservableObjectPublisher()
+    public let health = HealthData()
     
     var logs: [LogDay] = [] {
         willSet { self.objectWillChange.send() }
