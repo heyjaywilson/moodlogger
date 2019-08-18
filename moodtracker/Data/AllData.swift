@@ -21,7 +21,11 @@ class AllData: ObservableObject {
         let date = mood.returnDateString()
         
         if self.logs .isEmpty {
-            logs.append(LogDay(id: 1, moods: [mood], notes: [], date: date))
+            var newLogDay = LogDay(id: 1, moods: [mood], notes: [], date: date)
+            health.getActivityRings(forDay: mood.date_logged)
+            newLogDay.activity = health.getActivity(forDay: mood.date_logged)
+            logs.append(newLogDay)
+            
         } else {
             var breakOut = false
             var index = 0

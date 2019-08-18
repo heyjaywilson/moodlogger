@@ -7,10 +7,17 @@
 //
 
 import HealthKit
-
-class HealthData {
-    
+import Combine
+class HealthData: ObservableObject {
+    let objectWillChange = ObservableObjectPublisher()
     let hkstore: HKHealthStore
+    
+    public var sleep: [HKCategorySample] = [] {
+        willSet { self.objectWillChange.send() }
+    }
+    public var activity: [HKActivitySummary] = [] {
+        willSet { self.objectWillChange.send() }
+    }
     
     init(){
         hkstore = HKHealthStore()
@@ -27,13 +34,13 @@ class HealthData {
             return
         }
         
-        guard   let dateOfBirth = HKObjectType.characteristicType(forIdentifier: .dateOfBirth),
+        guard let dateOfBirth = HKObjectType.characteristicType(forIdentifier: .dateOfBirth),
             let biologicalSex = HKObjectType.characteristicType(forIdentifier: .biologicalSex),
             let bodyMassIndex = HKObjectType.quantityType(forIdentifier: .bodyMassIndex),
             let height = HKObjectType.quantityType(forIdentifier: .height),
             let bodyMass = HKObjectType.quantityType(forIdentifier: .bodyMass),
+            let sleep = HKObjectType.categoryType(forIdentifier: .sleepAnalysis),
             let activeEnergy = HKObjectType.quantityType(forIdentifier: .activeEnergyBurned) else {
-                
                 completion(false, HealthkitSetupError.dataTypeNotAvailable)
                 return
         }
@@ -43,7 +50,9 @@ class HealthData {
                                                        bodyMassIndex,
                                                        height,
                                                        bodyMass,
-                                                       activeEnergy, HKObjectType.activitySummaryType(),
+                                                       activeEnergy,
+                                                       sleep,
+                                                       HKObjectType.activitySummaryType(),
                                                        HKObjectType.workoutType()]
         HKHealthStore().requestAuthorization(toShare: healthKitTypesToWrite, read: healthKitTypesToRead) { (success, error) in
             completion(success, error)
@@ -68,11 +77,11 @@ class HealthData {
         }
     }
     
-    // - description: Used to get today's activity.
-    func getActivityRings() {
+    // - description: Used to get activity.
+    func getActivityRings(forDay date: Date) {
         let calendar: Calendar = Calendar.autoupdatingCurrent
         
-        var dateComponents: DateComponents = calendar.dateComponents([.year, .month, .day], from: Date())
+        var dateComponents: DateComponents = calendar.dateComponents([.year, .month, .day], from: date)
         
         dateComponents.calendar = calendar
         let predicate: NSPredicate = HKQuery.predicateForActivitySummary(with: dateComponents)
@@ -87,12 +96,63 @@ class HealthData {
             let exerciseUnit = HKUnit.second()
             
             for summary in summaries {
+                print(summary)
                 print(summary.activeEnergyBurned.doubleValue(for: energyUnit))
                 print(summary.appleStandHours.doubleValue(for: standUnit))
                 print(summary.appleExerciseTime.doubleValue(for: exerciseUnit))
+                
+                self.activity.append(summary)
             }
         }
         
         hkstore.execute(query)
+    }
+    
+    // - get matching activity
+    func getActivity(forDay date: Date) -> HKActivitySummary {
+        var i = 0;
+        while i < activity.count {
+            let calendar: Calendar = Calendar.autoupdatingCurrent
+            
+            var dateComponents: DateComponents = calendar.dateComponents([.year, .month, .day], from: date)
+            
+            dateComponents.calendar = calendar
+            if activity[i].dateComponents(for: calendar) == dateComponents {
+                return activity[i]
+            }
+            i = i + 1
+        }
+        
+        return getActivity(forDay: dateΩ)
+    }
+    
+    func getSleepAnalysis() {
+        if let sleepType = HKObjectType.categoryType(forIdentifier: HKCategoryTypeIdentifier.sleepAnalysis){
+            let sortDescriptor = NSSortDescriptor(key: HKSampleSortIdentifierEndDate, ascending: false)
+            let query = HKSampleQuery(sampleType: sleepType, predicate: nil, limit: 30, sortDescriptors: [sortDescriptor]) { (query, tmpResult, error) -> Void in
+                
+                if error != nil {
+                    
+                    // Handle the error in your app gracefully
+                    return
+                    
+                }
+                
+                if let result = tmpResult {
+                    
+                    for item in result {
+                        if let sample = item as? HKCategorySample {
+                            
+                            let value = (sample.value == HKCategoryValueSleepAnalysis.inBed.rawValue) ? "InBed" : "Asleep"
+                            
+                            print("Healthkit sleep: \(sample.startDate) \(sample.endDate) - value: \(value)")
+                            self.sleep.append(sample)
+                        }
+                    }
+                }
+            }
+            
+            hkstore.execute(query)
+        }
     }
 }

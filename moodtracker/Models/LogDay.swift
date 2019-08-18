@@ -6,7 +6,7 @@
 //  Copyright © 2019 MW. All rights reserved.
 //
 
-import Foundation
+import HealthKit
 
 /*
  Description: Holds all moods and notes for a given day
@@ -15,6 +15,7 @@ struct LogDay {
     let id: Int
     var moods: [Mood]
     var notes: [Note]
+    var activity: HKActivitySummary?
     var date: String
     
     func returnAll(_ object: String) -> [String]{
