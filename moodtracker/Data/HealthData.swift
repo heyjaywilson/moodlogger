@@ -123,7 +123,7 @@ class HealthData: ObservableObject {
             i = i + 1
         }
         
-        return getActivity(forDay: dateΩ)
+        return getActivity(forDay: date)
     }
     
     func getSleepAnalysis() {
