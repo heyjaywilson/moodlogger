@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
-//  moodtracker
+//  moodLog
 //
-//  Created by Maegan Wilson on 8/8/19.
+//  Created by Maegan Wilson on 8/20/19.
 //  Copyright © 2019 MW. All rights reserved.
 //
 
@@ -10,11 +10,11 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selection = 0
-    @EnvironmentObject var data: AllData
  
     var body: some View {
         TabView(selection: $selection){
-            AllLog()
+            Text("First View")
+                .font(.title)
                 .tabItem {
                     VStack {
                         Image(systemName: "heart.fill")
@@ -22,7 +22,8 @@ struct ContentView: View {
                     }
                 }
                 .tag(0)
-            MoodLog()
+            Text("Second View")
+                .font(.title)
                 .tabItem {
                     VStack {
                         Image(systemName: "heart.slash.fill")
@@ -30,32 +31,12 @@ struct ContentView: View {
                     }
                 }
                 .tag(1)
-            HealthLog()
-            .tabItem {
-                VStack {
-                    Image(systemName: "heart.circle.fill")
-                    Text("Health Only")
-                }
-            }
-            .tag(2)
-            Settings()
-            .tabItem {
-                VStack {
-                    Image(systemName: "gear")
-                    Text("Settings")
-                }
-            }
-            .tag(1)
         }
     }
 }
 
-#if DEBUG
 struct ContentView_Previews: PreviewProvider {
-    @EnvironmentObject var data: AllData
-    
     static var previews: some View {
         ContentView()
     }
 }
-#endif

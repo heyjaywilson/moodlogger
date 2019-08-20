@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:moodtracker.xcodeproj">
+      location = "self:moodLog.xcodeproj">
    </FileRef>
 </Workspace>
