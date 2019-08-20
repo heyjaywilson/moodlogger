@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		371F3A9F230C79EA00BBCDAA /* MoodEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F3A9E230C79EA00BBCDAA /* MoodEntity.swift */; };
 		37DDB46D230C0DB8009EDDAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DDB46C230C0DB8009EDDAC /* AppDelegate.swift */; };
 		37DDB46F230C0DB8009EDDAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DDB46E230C0DB8009EDDAC /* SceneDelegate.swift */; };
 		37DDB472230C0DB8009EDDAC /* moodLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37DDB470230C0DB8009EDDAC /* moodLog.xcdatamodeld */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		371F3A9E230C79EA00BBCDAA /* MoodEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntity.swift; sourceTree = "<group>"; };
 		37DDB469230C0DB8009EDDAC /* moodLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37DDB46C230C0DB8009EDDAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37DDB46E230C0DB8009EDDAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		371F3A99230C796C00BBCDAA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				371F3A9E230C79EA00BBCDAA /* MoodEntity.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		37DDB460230C0DB8009EDDAC = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +68,7 @@
 		37DDB46B230C0DB8009EDDAC /* moodLog */ = {
 			isa = PBXGroup;
 			children = (
+				371F3A99230C796C00BBCDAA /* CoreData */,
 				37DDB46C230C0DB8009EDDAC /* AppDelegate.swift */,
 				37DDB46E230C0DB8009EDDAC /* SceneDelegate.swift */,
 				37DDB473230C0DB8009EDDAC /* ContentView.swift */,
@@ -149,6 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				371F3A9F230C79EA00BBCDAA /* MoodEntity.swift in Sources */,
 				37DDB472230C0DB8009EDDAC /* moodLog.xcdatamodeld in Sources */,
 				37DDB46D230C0DB8009EDDAC /* AppDelegate.swift in Sources */,
 				37DDB474230C0DB8009EDDAC /* ContentView.swift in Sources */,

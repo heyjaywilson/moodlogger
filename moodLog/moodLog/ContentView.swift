@@ -8,12 +8,13 @@
 
 import SwiftUI
 
+/// Description - Tabbed menu navigation
 struct ContentView: View {
     @State private var selection = 0
  
     var body: some View {
         TabView(selection: $selection){
-            Text("First View")
+            Text("All Logs")
                 .font(.title)
                 .tabItem {
                     VStack {
