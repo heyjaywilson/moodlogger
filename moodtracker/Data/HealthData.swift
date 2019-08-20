@@ -15,7 +15,7 @@ class HealthData: ObservableObject {
     public var sleep: [HKCategorySample] = [] {
         willSet { self.objectWillChange.send() }
     }
-    public var activity: [HKActivitySummary] = [] {
+    public var activity: HKActivitySummary = HKActivitySummary() {
         willSet { self.objectWillChange.send() }
     }
     
@@ -101,29 +101,11 @@ class HealthData: ObservableObject {
                 print(summary.appleStandHours.doubleValue(for: standUnit))
                 print(summary.appleExerciseTime.doubleValue(for: exerciseUnit))
                 
-                self.activity.append(summary)
+                self.activity = summary
             }
         }
         
         hkstore.execute(query)
-    }
-    
-    // - get matching activity
-    func getActivity(forDay date: Date) -> HKActivitySummary {
-        var i = 0;
-        while i < activity.count {
-            let calendar: Calendar = Calendar.autoupdatingCurrent
-            
-            var dateComponents: DateComponents = calendar.dateComponents([.year, .month, .day], from: date)
-            
-            dateComponents.calendar = calendar
-            if activity[i].dateComponents(for: calendar) == dateComponents {
-                return activity[i]
-            }
-            i = i + 1
-        }
-        
-        return getActivity(forDay: date)
     }
     
     func getSleepAnalysis() {
@@ -153,6 +135,17 @@ class HealthData: ObservableObject {
             }
             
             hkstore.execute(query)
+        }
+    }
+    
+    func returnUnit(_ i: Int) -> HKUnit{
+        switch i {
+        case 0:
+            return HKUnit.kilocalorie()
+        case 1:
+            return HKUnit.count()
+        default:
+            return HKUnit.second()
         }
     }
 }

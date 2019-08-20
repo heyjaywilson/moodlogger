@@ -11,6 +11,8 @@
 		372F6F1C22FD0A9A007E5842 /* ExerciseSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F6F1B22FD0A9A007E5842 /* ExerciseSmall.swift */; };
 		372F6F1E22FD0BDB007E5842 /* StandSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372F6F1D22FD0BDB007E5842 /* StandSmall.swift */; };
 		3730803C22FD12350032E400 /* StepsSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3730803B22FD12350032E400 /* StepsSmall.swift */; };
+		375BB297230B932B003CF7E2 /* Move.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375BB296230B932B003CF7E2 /* Move.swift */; };
+		375BB299230B9815003CF7E2 /* ActivityBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375BB298230B9815003CF7E2 /* ActivityBar.swift */; };
 		37666E4F22FCA188008455BE /* SleepSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37666E4E22FCA188008455BE /* SleepSmall.swift */; };
 		37666E5122FCA2DA008455BE /* MoveSmall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37666E5022FCA2DA008455BE /* MoveSmall.swift */; };
 		376E0C4B230256AE0030E2B3 /* FormMood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376E0C4A230256AE0030E2B3 /* FormMood.swift */; };
@@ -43,6 +45,8 @@
 		372F6F1B22FD0A9A007E5842 /* ExerciseSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseSmall.swift; sourceTree = "<group>"; };
 		372F6F1D22FD0BDB007E5842 /* StandSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandSmall.swift; sourceTree = "<group>"; };
 		3730803B22FD12350032E400 /* StepsSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsSmall.swift; sourceTree = "<group>"; };
+		375BB296230B932B003CF7E2 /* Move.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Move.swift; sourceTree = "<group>"; };
+		375BB298230B9815003CF7E2 /* ActivityBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityBar.swift; sourceTree = "<group>"; };
 		37666E4E22FCA188008455BE /* SleepSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepSmall.swift; sourceTree = "<group>"; };
 		37666E5022FCA2DA008455BE /* MoveSmall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveSmall.swift; sourceTree = "<group>"; };
 		376E0C4A230256AE0030E2B3 /* FormMood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormMood.swift; sourceTree = "<group>"; };
@@ -109,6 +113,7 @@
 				372F6F1B22FD0A9A007E5842 /* ExerciseSmall.swift */,
 				372F6F1D22FD0BDB007E5842 /* StandSmall.swift */,
 				37EAA409230366300009C262 /* MoveLarge.swift */,
+				375BB296230B932B003CF7E2 /* Move.swift */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -199,6 +204,7 @@
 				37007AA323031EB000F43C2E /* Sleep */,
 				37007AA023031D2000F43C2E /* Moods */,
 				3730803B22FD12350032E400 /* StepsSmall.swift */,
+				375BB298230B9815003CF7E2 /* ActivityBar.swift */,
 			);
 			path = HealthOptions;
 			sourceTree = "<group>";
@@ -299,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37C8574322FC4253003A6987 /* AllLog.swift in Sources */,
+				375BB299230B9815003CF7E2 /* ActivityBar.swift in Sources */,
 				37AEE6372300B076006EC8EC /* AllData.swift in Sources */,
 				37C8575022FC47F1003A6987 /* MonthDate.swift in Sources */,
 				37AEE6342300AFF7006EC8EC /* Note.swift in Sources */,
@@ -314,6 +321,7 @@
 				37C8572F22FC4097003A6987 /* moodtracker.xcdatamodeld in Sources */,
 				37C8572A22FC4097003A6987 /* AppDelegate.swift in Sources */,
 				37C8575322FC4867003A6987 /* AllLogRow.swift in Sources */,
+				375BB297230B932B003CF7E2 /* Move.swift in Sources */,
 				37C36F4122FD8B0E0048C2D6 /* Mood.swift in Sources */,
 				37AEE6322300AF8E006EC8EC /* LogDay.swift in Sources */,
 				37C8573122FC4097003A6987 /* ContentView.swift in Sources */,

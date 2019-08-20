@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct AllLogRow: View {
+    @EnvironmentObject var data: AllData
     var logs: LogDay
     
     @State private var month = ""
@@ -24,9 +25,9 @@ struct AllLogRow: View {
             }.padding(.leading)
             
             VStack(alignment: .leading) {
-                MoveSmall()
-                ExerciseSmall()
-                StandSmall()
+                ActRingBar(typeBar: 0, size: 1, percent: getMovePercentage())
+                ActRingBar(typeBar: 1, size: 1, percent: getActPercentage())
+                ActRingBar(typeBar: 2, size: 1, percent: getStandPercentage())
             }.padding(.leading)
         }.onAppear {
             self.formatDate()
@@ -76,6 +77,32 @@ struct AllLogRow: View {
             self.month = "---"
         }
         self.day = "\(dateComponents.day!)"
+    }
+    func getMovePercentage() -> Double{
+        let amt = logs.activity?.activeEnergyBurned.doubleValue(for: data.health.returnUnit(0)) ?? 0.0
+        let goal = logs.activity?.activeEnergyBurnedGoal.doubleValue(for: data.health.returnUnit(0)) ?? 0.0
+        if goal == 0 {
+            return 0.0
+        }
+        return amt/goal * 100
+    }
+    
+    func getActPercentage() -> Double {
+        let amt = logs.activity?.appleExerciseTime.doubleValue(for: data.health.returnUnit(2)) ?? 0.0
+        let goal = logs.activity?.appleExerciseTimeGoal.doubleValue(for: data.health.returnUnit(2)) ?? 0.0
+        if goal == 0 {
+            return 0.0
+        }
+        return amt/goal * 100
+    }
+    
+    func getStandPercentage() -> Double {
+        let amt = logs.activity?.appleStandHours.doubleValue(for: data.health.returnUnit(1)) ?? 0.0
+        let goal = logs.activity?.appleStandHoursGoal.doubleValue(for: data.health.returnUnit(1)) ?? 0.0
+        if goal == 0 {
+            return 0.0
+        }
+        return amt/goal * 100
     }
 }
 #if DEBUG

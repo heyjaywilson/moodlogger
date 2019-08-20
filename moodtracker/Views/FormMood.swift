@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct FormMood: View {
-    @Environment(\.presentationMode) var presentation
+    @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var data: AllData
     
     @State private var newMood: Mood = Mood(mood: "", date_logged: Date())
@@ -46,13 +46,12 @@ struct FormMood: View {
             .navigationBarItems(
                 leading:
                 Button(action: {
-                    self.presentation.value.dismiss()
+                    self.presentationMode.wrappedValue.dismiss()
                 }){
                     Text("Cancel")
                 },
                 trailing: Button(action: {
                     self.addMood()
-                    self.presentation.value.dismiss()
                 }){
                     Text("Add")
             })
@@ -63,6 +62,7 @@ struct FormMood: View {
         newMood.mood = emojis[selection]
         newMood.date_logged = date_logged
         data.add(mood: newMood)
+        self.presentationMode.wrappedValue.dismiss()
     }
 }
 
