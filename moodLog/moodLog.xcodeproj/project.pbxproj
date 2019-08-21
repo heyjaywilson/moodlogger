@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		37A8B933230C9FE3009E63C2 /* MoodEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F3A9E230C79EA00BBCDAA /* MoodEntity.swift */; };
 		37A8B934230C9FE7009E63C2 /* AllLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F381CD230C991A00C976BC /* AllLogs.swift */; };
+		37AD65A0230CD4960079284E /* LogRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AD659F230CD4960079284E /* LogRow.swift */; };
 		37DDB46D230C0DB8009EDDAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DDB46C230C0DB8009EDDAC /* AppDelegate.swift */; };
 		37DDB46F230C0DB8009EDDAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DDB46E230C0DB8009EDDAC /* SceneDelegate.swift */; };
 		37DDB472230C0DB8009EDDAC /* moodLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37DDB470230C0DB8009EDDAC /* moodLog.xcdatamodeld */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		371F3A9E230C79EA00BBCDAA /* MoodEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntity.swift; sourceTree = "<group>"; };
+		37AD659F230CD4960079284E /* LogRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRow.swift; sourceTree = "<group>"; };
 		37DDB469230C0DB8009EDDAC /* moodLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37DDB46C230C0DB8009EDDAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37DDB46E230C0DB8009EDDAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,6 +52,15 @@
 				371F3A9E230C79EA00BBCDAA /* MoodEntity.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		37AD659E230CD4820079284E /* Logs */ = {
+			isa = PBXGroup;
+			children = (
+				37F381CD230C991A00C976BC /* AllLogs.swift */,
+				37AD659F230CD4960079284E /* LogRow.swift */,
+			);
+			path = Logs;
 			sourceTree = "<group>";
 		};
 		37DDB460230C0DB8009EDDAC = {
@@ -95,7 +106,7 @@
 		37F381CC230C987600C976BC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				37F381CD230C991A00C976BC /* AllLogs.swift */,
+				37AD659E230CD4820079284E /* Logs */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +184,7 @@
 			files = (
 				37A8B933230C9FE3009E63C2 /* MoodEntity.swift in Sources */,
 				37DDB472230C0DB8009EDDAC /* moodLog.xcdatamodeld in Sources */,
+				37AD65A0230CD4960079284E /* LogRow.swift in Sources */,
 				37A8B934230C9FE7009E63C2 /* AllLogs.swift in Sources */,
 				37DDB46D230C0DB8009EDDAC /* AppDelegate.swift in Sources */,
 				37DDB474230C0DB8009EDDAC /* ContentView.swift in Sources */,

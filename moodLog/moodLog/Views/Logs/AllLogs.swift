@@ -11,7 +11,7 @@ import SwiftUI
 struct AllLogs: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     
-    // @FetchRequest(fetchRequest: MoodEntity.allMoodsFetchRequest()) var moods: FetchedResults<MoodEntity>
+    @FetchRequest(fetchRequest: MoodEntity.allMoodsFetchRequest()) var moods: FetchedResults<MoodEntity>
     
     var body: some View {
         VStack {
@@ -30,6 +30,9 @@ struct AllLogs: View {
                 print(mood)
             }){
                 Text("Add Mood")
+            }
+            List(self.moods){ entry in
+                LogRow(entry: entry)
             }
         }
     }
