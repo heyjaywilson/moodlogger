@@ -15,8 +15,7 @@ struct ContentView: View {
  
     var body: some View {
         TabView(selection: $selection){
-            AllLogs().environment(
-            \.managedObjectContext, managedObjectContext)
+            AllLogs().environment(\.managedObjectContext, managedObjectContext)
                 .tabItem {
                     VStack {
                         Image(systemName: "heart.fill")

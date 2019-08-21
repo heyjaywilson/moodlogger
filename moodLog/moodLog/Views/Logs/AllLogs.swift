@@ -12,25 +12,18 @@ struct AllLogs: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     
     @FetchRequest(fetchRequest: MoodEntity.allMoodsFetchRequest()) var moods: FetchedResults<MoodEntity>
+    @State private var showModal: Bool = false
     
     var body: some View {
         VStack {
             Button(action: {
-                print("add mood")
-                let mood = MoodEntity(context: self.managedObjectContext)
-                mood.date_logged = Date()
-                mood.id = UUID()
-                mood.mood = "😘"
-                
-                do {
-                    try self.managedObjectContext.save()
-                } catch {
-                    print(error)
-                }
-                print(mood)
+                self.showModal = true
             }){
                 Text("Add Mood")
+            }.sheet(isPresented: $showModal){
+                MoodForm().environment(\.managedObjectContext, self.managedObjectContext)
             }
+            
             List(self.moods){ entry in
                 LogRow(entry: entry)
             }
