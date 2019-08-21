@@ -32,7 +32,7 @@ struct LogRow: View {
     func formatDate(){
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
-        formatter.locale = NSLocale.current
+        formatter.locale = Locale.current
         
         let requestedComponents: Set<Calendar.Component> = [
             .year,

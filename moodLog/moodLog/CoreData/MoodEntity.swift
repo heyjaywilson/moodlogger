@@ -19,7 +19,7 @@ extension MoodEntity {
     static func allMoodsFetchRequest() -> NSFetchRequest<MoodEntity> {
         let request: NSFetchRequest<MoodEntity> = MoodEntity.fetchRequest() as! NSFetchRequest<MoodEntity>
         
-        request.sortDescriptors = [NSSortDescriptor(key: "date_logged", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "date_logged", ascending: false)]
         
         return request
     }
