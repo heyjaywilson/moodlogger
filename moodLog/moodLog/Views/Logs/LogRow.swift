@@ -22,7 +22,6 @@ struct LogRow: View {
             VStack {
                 Text("\(entry.mood)")
                 Text("Steps")
-                Text("Sleep")
             }
         }.onAppear{
             self.formatDate()
@@ -30,7 +29,7 @@ struct LogRow: View {
     }
     
     func formatDate(){
-        self.month = HelperFunctions().returnMonth(from: entry.date_logged)
+        self.month = HelperFunctions().returnShortMonth(from: entry.date_logged)
         self.day = HelperFunctions().returnDay(from: entry.date_logged)
     }
 }

@@ -26,8 +26,7 @@ extension MoodEntity {
         return request
     }
     
-    /// Description - Only shows moods with the given month
-    /// parameters - month: String - The month to filter
+    /// Only shows moods with the given month
     static func moodsForMonth(_ month: String) -> NSFetchRequest<MoodEntity> {
         let request: NSFetchRequest<MoodEntity> = MoodEntity.fetchRequest() as! NSFetchRequest<MoodEntity>
         request.predicate = NSPredicate(format: "month CONTAINS[c] '\(month)'")

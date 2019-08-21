@@ -38,6 +38,15 @@ struct HelperFunctions {
         return month
     }
     
+    func returnShortMonth(from date: Date) -> String {
+        formatter.dateFormat = "yyyy/MM/dd"
+        formatter.locale = Locale.current
+        
+        let dateComponents = userCalendar.dateComponents(requestedComponents, from: date)
+        let month: String = formatter.shortMonthSymbols[(dateComponents.month ?? 1)-1]
+        return month
+    }
+    
     func returnDay(from date:Date) -> String {
         formatter.dateFormat = "yyyy/MM/dd"
         formatter.locale = Locale.current

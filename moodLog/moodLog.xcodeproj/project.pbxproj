@@ -58,6 +58,13 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		3786DB3A230E0FF9006A6ECD /* HealthViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HealthViews;
+			sourceTree = "<group>";
+		};
 		37AD659E230CD4820079284E /* Logs */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +126,7 @@
 		37F381CC230C987600C976BC /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3786DB3A230E0FF9006A6ECD /* HealthViews */,
 				37AD65A1230CE0950079284E /* Forms */,
 				37AD659E230CD4820079284E /* Logs */,
 			);
