@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14897.2" systemVersion="19A536g" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="MoodEntity" representedClassName="MoodEntity" syncable="YES">
+    <entity name="MoodEntity" representedClassName=".MoodEntity" syncable="YES">
         <attribute name="date_logged" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="mood" attributeType="String" defaultValueString=""/>

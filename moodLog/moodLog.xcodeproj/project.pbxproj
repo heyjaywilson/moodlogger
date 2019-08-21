@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		371F3A9F230C79EA00BBCDAA /* MoodEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F3A9E230C79EA00BBCDAA /* MoodEntity.swift */; };
+		37A8B933230C9FE3009E63C2 /* MoodEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F3A9E230C79EA00BBCDAA /* MoodEntity.swift */; };
+		37A8B934230C9FE7009E63C2 /* AllLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F381CD230C991A00C976BC /* AllLogs.swift */; };
 		37DDB46D230C0DB8009EDDAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DDB46C230C0DB8009EDDAC /* AppDelegate.swift */; };
 		37DDB46F230C0DB8009EDDAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DDB46E230C0DB8009EDDAC /* SceneDelegate.swift */; };
 		37DDB472230C0DB8009EDDAC /* moodLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37DDB470230C0DB8009EDDAC /* moodLog.xcdatamodeld */; };
@@ -28,6 +29,7 @@
 		37DDB478230C0DBD009EDDAC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		37DDB47B230C0DBD009EDDAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		37DDB47D230C0DBD009EDDAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37F381CD230C991A00C976BC /* AllLogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLogs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +46,7 @@
 		371F3A99230C796C00BBCDAA /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				37DDB470230C0DB8009EDDAC /* moodLog.xcdatamodeld */,
 				371F3A9E230C79EA00BBCDAA /* MoodEntity.swift */,
 			);
 			path = CoreData;
@@ -68,6 +71,7 @@
 		37DDB46B230C0DB8009EDDAC /* moodLog */ = {
 			isa = PBXGroup;
 			children = (
+				37F381CC230C987600C976BC /* Views */,
 				371F3A99230C796C00BBCDAA /* CoreData */,
 				37DDB46C230C0DB8009EDDAC /* AppDelegate.swift */,
 				37DDB46E230C0DB8009EDDAC /* SceneDelegate.swift */,
@@ -75,7 +79,6 @@
 				37DDB475230C0DBD009EDDAC /* Assets.xcassets */,
 				37DDB47A230C0DBD009EDDAC /* LaunchScreen.storyboard */,
 				37DDB47D230C0DBD009EDDAC /* Info.plist */,
-				37DDB470230C0DB8009EDDAC /* moodLog.xcdatamodeld */,
 				37DDB477230C0DBD009EDDAC /* Preview Content */,
 			);
 			path = moodLog;
@@ -87,6 +90,14 @@
 				37DDB478230C0DBD009EDDAC /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		37F381CC230C987600C976BC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37F381CD230C991A00C976BC /* AllLogs.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,8 +171,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				371F3A9F230C79EA00BBCDAA /* MoodEntity.swift in Sources */,
+				37A8B933230C9FE3009E63C2 /* MoodEntity.swift in Sources */,
 				37DDB472230C0DB8009EDDAC /* moodLog.xcdatamodeld in Sources */,
+				37A8B934230C9FE7009E63C2 /* AllLogs.swift in Sources */,
 				37DDB46D230C0DB8009EDDAC /* AppDelegate.swift in Sources */,
 				37DDB474230C0DB8009EDDAC /* ContentView.swift in Sources */,
 				37DDB46F230C0DB8009EDDAC /* SceneDelegate.swift in Sources */,
@@ -312,7 +324,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = maeganwilson.moodLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -332,7 +344,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = maeganwilson.moodLog;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

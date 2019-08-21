@@ -10,12 +10,13 @@ import SwiftUI
 
 /// Description - Tabbed menu navigation
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var managedObjectContext
     @State private var selection = 0
  
     var body: some View {
         TabView(selection: $selection){
-            Text("All Logs")
-                .font(.title)
+            AllLogs().environment(
+            \.managedObjectContext, managedObjectContext)
                 .tabItem {
                     VStack {
                         Image(systemName: "heart.fill")
