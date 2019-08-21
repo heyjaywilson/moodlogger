@@ -56,6 +56,8 @@ struct MoodForm: View {
         mood.date_logged = self.date_logged
         mood.mood = self.emojis[self.selection]
         mood.id = UUID()
+        mood.month = HelperFunctions().returnMonth(from: self.date_logged)
+        mood.year = HelperFunctions().returnYear(from: self.date_logged)
         
         do {
             try self.managedObjectContext.save()

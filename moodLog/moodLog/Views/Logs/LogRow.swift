@@ -30,24 +30,8 @@ struct LogRow: View {
     }
     
     func formatDate(){
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
-        formatter.locale = Locale.current
-        
-        let requestedComponents: Set<Calendar.Component> = [
-            .year,
-            .month,
-            .day,
-            .hour,
-            .minute,
-            .second
-        ]
-        let userCalendar = Calendar.current
-        let dateComponents = userCalendar.dateComponents(requestedComponents, from: self.entry.date_logged)
-        let month: String = formatter.shortMonthSymbols[(dateComponents.month ?? 1)-1]
-        let day: Int = dateComponents.day ?? 1
-        self.month = month
-        self.day = "\(day)"
+        self.month = HelperFunctions().returnMonth(from: entry.date_logged)
+        self.day = HelperFunctions().returnDay(from: entry.date_logged)
     }
 }
 

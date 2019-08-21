@@ -3,9 +3,11 @@
     <entity name="MoodEntity" representedClassName=".MoodEntity" syncable="YES">
         <attribute name="date_logged" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="month" optional="YES" attributeType="String"/>
         <attribute name="mood" attributeType="String" defaultValueString=""/>
+        <attribute name="year" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="MoodEntity" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="MoodEntity" positionX="-63" positionY="-18" width="128" height="118"/>
     </elements>
 </model>

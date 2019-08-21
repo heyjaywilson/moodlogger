@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		376EAEFE230D605E0060986C /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376EAEFD230D605E0060986C /* HelperFunctions.swift */; };
 		37A8B933230C9FE3009E63C2 /* MoodEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F3A9E230C79EA00BBCDAA /* MoodEntity.swift */; };
 		37A8B934230C9FE7009E63C2 /* AllLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F381CD230C991A00C976BC /* AllLogs.swift */; };
 		37AD65A0230CD4960079284E /* LogRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AD659F230CD4960079284E /* LogRow.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		371F3A9E230C79EA00BBCDAA /* MoodEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodEntity.swift; sourceTree = "<group>"; };
+		376EAEFD230D605E0060986C /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		37AD659F230CD4960079284E /* LogRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRow.swift; sourceTree = "<group>"; };
 		37AD65A2230CE0A20079284E /* MoodForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodForm.swift; sourceTree = "<group>"; };
 		37DDB469230C0DB8009EDDAC /* moodLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +103,7 @@
 				37DDB47A230C0DBD009EDDAC /* LaunchScreen.storyboard */,
 				37DDB47D230C0DBD009EDDAC /* Info.plist */,
 				37DDB477230C0DBD009EDDAC /* Preview Content */,
+				376EAEFD230D605E0060986C /* HelperFunctions.swift */,
 			);
 			path = moodLog;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				37DDB46D230C0DB8009EDDAC /* AppDelegate.swift in Sources */,
 				37DDB474230C0DB8009EDDAC /* ContentView.swift in Sources */,
 				37DDB46F230C0DB8009EDDAC /* SceneDelegate.swift in Sources */,
+				376EAEFE230D605E0060986C /* HelperFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

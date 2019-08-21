@@ -13,6 +13,8 @@ public class MoodEntity: NSManagedObject, Identifiable {
     @NSManaged public var date_logged: Date
     @NSManaged public var id: UUID
     @NSManaged public var mood: String
+    @NSManaged public var month: String?
+    @NSManaged public var year: String?
 }
 
 extension MoodEntity {
@@ -20,7 +22,16 @@ extension MoodEntity {
         let request: NSFetchRequest<MoodEntity> = MoodEntity.fetchRequest() as! NSFetchRequest<MoodEntity>
         
         request.sortDescriptors = [NSSortDescriptor(key: "date_logged", ascending: false)]
-        
+        print(request)
+        return request
+    }
+    
+    /// Description - Only shows moods with the given month
+    /// parameters - month: String - The month to filter
+    static func moodsForMonth(_ month: String) -> NSFetchRequest<MoodEntity> {
+        let request: NSFetchRequest<MoodEntity> = MoodEntity.fetchRequest() as! NSFetchRequest<MoodEntity>
+        request.predicate = NSPredicate(format: "month CONTAINS[c] '\(month)'")
+        request.sortDescriptors = [NSSortDescriptor(key: "date_logged", ascending: false)]
         return request
     }
 }
