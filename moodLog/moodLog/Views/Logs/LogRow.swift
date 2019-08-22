@@ -21,7 +21,7 @@ struct LogRow: View {
             }
             VStack {
                 Text("\(entry.mood)")
-                Text("Steps")
+                StepsSmall()
             }
         }.onAppear{
             self.formatDate()

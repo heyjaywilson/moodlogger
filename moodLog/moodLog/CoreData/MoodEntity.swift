@@ -22,7 +22,6 @@ extension MoodEntity {
         let request: NSFetchRequest<MoodEntity> = MoodEntity.fetchRequest() as! NSFetchRequest<MoodEntity>
         
         request.sortDescriptors = [NSSortDescriptor(key: "date_logged", ascending: false)]
-        print(request)
         return request
     }
     
