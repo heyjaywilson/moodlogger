@@ -33,4 +33,11 @@ extension MoodEntity {
         request.sortDescriptors = [NSSortDescriptor(key: "date_logged", ascending: false)]
         return request
     }
+    
+    static func moodsForYearMonth(_ month: String, _ year: String)  -> NSFetchRequest<MoodEntity> {
+        let request: NSFetchRequest<MoodEntity> = MoodEntity.fetchRequest() as! NSFetchRequest<MoodEntity>
+        request.predicate = NSPredicate(format: "month CONTAINS[c] '\(month)' and year CONTAINS[c] '\(year)'")
+        request.sortDescriptors = [NSSortDescriptor(key: "date_logged", ascending: false)]
+        return request
+    }
 }
