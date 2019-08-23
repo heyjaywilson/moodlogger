@@ -9,13 +9,14 @@
 import SwiftUI
 
 struct StepsSmall: View {
+    var steps: Double
     var body: some View {
-        Text("Hello World!")
+        Text("\(steps)")
     }
 }
 
 struct StepsSmall_Previews: PreviewProvider {
     static var previews: some View {
-        StepsSmall()
+        StepsSmall(steps: 150.0)
     }
 }

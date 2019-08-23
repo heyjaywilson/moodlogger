@@ -11,6 +11,8 @@ import SwiftUI
 /// Description - Tabbed menu navigation
 struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
+    @EnvironmentObject var health: HealthData
+    
     @State private var selection = 0
  
     var body: some View {
@@ -37,6 +39,7 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+    @EnvironmentObject var health: HealthData
     static var previews: some View {
         ContentView()
     }

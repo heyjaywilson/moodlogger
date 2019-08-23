@@ -14,6 +14,7 @@
 		37A8B934230C9FE7009E63C2 /* AllLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37F381CD230C991A00C976BC /* AllLogs.swift */; };
 		37AD65A0230CD4960079284E /* LogRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AD659F230CD4960079284E /* LogRow.swift */; };
 		37AD65A3230CE0A20079284E /* MoodForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37AD65A2230CE0A20079284E /* MoodForm.swift */; };
+		37CA8DA2230EB44C005BA237 /* HealthData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37CA8DA1230EB44C005BA237 /* HealthData.swift */; };
 		37DDB46D230C0DB8009EDDAC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DDB46C230C0DB8009EDDAC /* AppDelegate.swift */; };
 		37DDB46F230C0DB8009EDDAC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DDB46E230C0DB8009EDDAC /* SceneDelegate.swift */; };
 		37DDB472230C0DB8009EDDAC /* moodLog.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 37DDB470230C0DB8009EDDAC /* moodLog.xcdatamodeld */; };
@@ -31,6 +32,7 @@
 		3786DB3F230E164C006A6ECD /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		37AD659F230CD4960079284E /* LogRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRow.swift; sourceTree = "<group>"; };
 		37AD65A2230CE0A20079284E /* MoodForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodForm.swift; sourceTree = "<group>"; };
+		37CA8DA1230EB44C005BA237 /* HealthData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthData.swift; sourceTree = "<group>"; };
 		37DDB469230C0DB8009EDDAC /* moodLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = moodLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37DDB46C230C0DB8009EDDAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37DDB46E230C0DB8009EDDAC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,14 @@
 			path = Forms;
 			sourceTree = "<group>";
 		};
+		37CA8DA0230EB415005BA237 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				37CA8DA1230EB44C005BA237 /* HealthData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		37DDB460230C0DB8009EDDAC = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +127,7 @@
 		37DDB46B230C0DB8009EDDAC /* moodLog */ = {
 			isa = PBXGroup;
 			children = (
+				37CA8DA0230EB415005BA237 /* Data */,
 				3786DB3D230E164C006A6ECD /* moodLog.entitlements */,
 				37F381CC230C987600C976BC /* Views */,
 				371F3A99230C796C00BBCDAA /* CoreData */,
@@ -230,6 +241,7 @@
 				37DDB46D230C0DB8009EDDAC /* AppDelegate.swift in Sources */,
 				37DDB474230C0DB8009EDDAC /* ContentView.swift in Sources */,
 				37DDB46F230C0DB8009EDDAC /* SceneDelegate.swift in Sources */,
+				37CA8DA2230EB44C005BA237 /* HealthData.swift in Sources */,
 				376EAEFE230D605E0060986C /* HelperFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
