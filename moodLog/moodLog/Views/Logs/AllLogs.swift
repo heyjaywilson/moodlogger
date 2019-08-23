@@ -15,7 +15,7 @@ struct AllLogs: View {
     @State private var showModal: Bool = false
     
     var body: some View {
-        VStack {
+        VStack(alignment: .center) {
             Button(action: {
                 self.showModal = true
             }){

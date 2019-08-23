@@ -11,12 +11,14 @@ import SwiftUI
 struct StepsSmall: View {
     var steps: Double
     var body: some View {
-        Text("\(steps)")
+        Text("Steps: \(HelperFunctions().returnValue(steps, places: 0))")
+            .font(.subheadline)
+            .lineLimit(nil)
     }
 }
 
 struct StepsSmall_Previews: PreviewProvider {
     static var previews: some View {
-        StepsSmall(steps: 150.0)
+        StepsSmall(steps: 0)
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import HealthKit
 
 struct LogRow: View {
     @EnvironmentObject var health: HealthData
@@ -16,11 +17,12 @@ struct LogRow: View {
     var entry: MoodEntity
     var body: some View {
         HStack {
-            VStack {
+            VStack(alignment: .center) {
                 Text(month)
+                    .fontWeight(.bold)
                 Text(day)
             }
-            VStack {
+            VStack(alignment: .leading) {
                 Text("\(entry.mood)")
                 StepsSmall(steps: steps)
             }
@@ -36,15 +38,33 @@ struct LogRow: View {
     }
     
     func getStepData() {
-        health.getStepsFor(date: entry.date_logged)
-        
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
+        formatter.dateFormat = "yyy/MM/dd"
         let stringDate = formatter.string(from: entry.date_logged)
         let datelogged = formatter.date(from: stringDate)!
-        print(datelogged)
+        let startDay = Calendar.current.startOfDay(for: datelogged)
+        let predicate = HKQuery.predicateForSamples(withStart: startDay, end: entry.date_logged)
+        let sampleType:HKQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
         
-        steps = health.steps[datelogged] ?? 0.0
+        let query = HKStatisticsQuery(quantityType: sampleType, quantitySamplePredicate: predicate, options: .cumulativeSum) { (_, result, error) in
+            var resultCount = 0.0
+            
+            guard let result = result else {
+                print("\(String(describing: error))")
+                return
+            }
+            
+            if let sum = result.sumQuantity(){
+                resultCount = sum.doubleValue(for: HKUnit.count())
+            }
+            
+            DispatchQueue.main.async {
+                self.steps = resultCount
+            }
+            print(resultCount)
+        }
+        
+        health.hkstore.execute(query)
     }
 }
 

@@ -55,4 +55,12 @@ struct HelperFunctions {
         let day: Int = dateComponents.day ?? 1
         return "\(day)"
     }
+    
+    func returnValue(_ value: Double, places: Int) -> String {
+        if value > 0 {
+            return String(format: "%.\(places)f", value)
+        }
+        
+        return "No data available"
+    }
 }
