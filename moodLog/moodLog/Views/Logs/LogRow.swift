@@ -14,7 +14,7 @@ struct LogRow: View {
     @State private var month: String = ""
     @State private var day: String = ""
     @State private var steps: Double = 0.0
-    var entry: MoodEntity
+    var log: LogEntity
     var body: some View {
         HStack {
             VStack(alignment: .center) {
@@ -23,7 +23,7 @@ struct LogRow: View {
                 Text(day)
             }
             VStack(alignment: .leading) {
-                Text("\(entry.mood)")
+                Text("\(self.getMoods())")
                 StepsSmall(steps: steps)
             }
         }.onAppear{
@@ -31,19 +31,22 @@ struct LogRow: View {
             self.getStepData()
         }
     }
-    
+    func getMoods() -> String {
+        var moods: String = ""
+        for mood in log.moods!.allObjects as! [MoodEntity] {
+            moods = moods + mood.mood!
+        }
+        return moods
+    }
     func formatDate(){
-        self.month = HelperFunctions().returnShortMonth(from: entry.date_logged)
-        self.day = HelperFunctions().returnDay(from: entry.date_logged)
+        self.month = HelperFunctions().returnShortMonth(from: log.date_logged!)
+        self.day = HelperFunctions().returnDay(from: log.date_logged!)
     }
     
     func getStepData() {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyy/MM/dd"
-        let stringDate = formatter.string(from: entry.date_logged)
-        let datelogged = formatter.date(from: stringDate)!
+        let datelogged = log.date_logged!
         let startDay = Calendar.current.startOfDay(for: datelogged)
-        let predicate = HKQuery.predicateForSamples(withStart: startDay, end: entry.date_logged)
+        let predicate = HKQuery.predicateForSamples(withStart: startDay, end: log.date_logged!)
         let sampleType:HKQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
         
         let query = HKStatisticsQuery(quantityType: sampleType, quantitySamplePredicate: predicate, options: .cumulativeSum) { (_, result, error) in
@@ -61,7 +64,6 @@ struct LogRow: View {
             DispatchQueue.main.async {
                 self.steps = resultCount
             }
-            print(resultCount)
         }
         
         health.hkstore.execute(query)

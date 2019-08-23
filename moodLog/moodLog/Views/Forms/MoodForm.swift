@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct MoodForm: View {
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -52,14 +53,36 @@ struct MoodForm: View {
     }
     
     func addMood() {
+        let help = HelperFunctions()
+        var log: LogEntity!
+        let logRequest:NSFetchRequest<LogEntity> = LogEntity.fetchRequest()
+        logRequest.predicate = NSPredicate(format: "date ==%@", help.returnStringDate(from: date_logged))
+        
+        if let logs = try? managedObjectContext.fetch(logRequest){
+            if logs.count > 0 {
+                log = logs[0]
+            }
+        }
+        
+        if log == nil {
+            let newLog = LogEntity(context: managedObjectContext)
+            newLog.date = help.returnStringDate(from: date_logged)
+            newLog.id = UUID()
+            newLog.date_logged = help.returnDate(from: date_logged)
+            log = newLog
+        }
+        
+        // MOOD
         let mood = MoodEntity(context: managedObjectContext)
         mood.date_logged = self.date_logged
         mood.mood = self.emojis[self.selection]
         mood.id = UUID()
         mood.month = HelperFunctions().returnMonth(from: self.date_logged)
         mood.year = HelperFunctions().returnYear(from: self.date_logged)
+        mood.log = log
         
         do {
+            
             try self.managedObjectContext.save()
         } catch {
             print(error)

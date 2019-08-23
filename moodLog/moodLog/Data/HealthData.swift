@@ -57,11 +57,9 @@ class HealthData: ObservableObject {
             completion(success, error)
         }
     }
+    
     func getStepsFor(date: Date)  {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd"
-        let stringDate = formatter.string(from: date)
-        let datelogged = formatter.date(from: stringDate)!
+        let datelogged = HelperFunctions().returnDate(from: date)
         let startDay = Calendar.current.startOfDay(for: datelogged)
         let predicate = HKQuery.predicateForSamples(withStart: startDay, end: date)
         let sampleType:HKQuantityType = HKQuantityType.quantityType(forIdentifier: .stepCount)!
@@ -81,7 +79,7 @@ class HealthData: ObservableObject {
             DispatchQueue.main.async {
                 self.steps[datelogged] = resultCount
             }
-            print(resultCount)
+            
         }
         
         hkstore.execute(query)

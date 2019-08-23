@@ -56,6 +56,17 @@ struct HelperFunctions {
         return "\(day)"
     }
     
+    func returnDate(from date: Date) -> Date {
+        formatter.dateFormat = "yyyy/MM/dd"
+        let stringDate = formatter.string(from: date)
+        return formatter.date(from: stringDate)!
+    }
+    
+    func returnStringDate(from date: Date) -> String {
+        formatter.dateFormat = "yyyy/MM/dd"
+        return formatter.string(from: date)
+    }
+    
     func returnValue(_ value: Double, places: Int) -> String {
         if value > 0 {
             return String(format: "%.\(places)f", value)

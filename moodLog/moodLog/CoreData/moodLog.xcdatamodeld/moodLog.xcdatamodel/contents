@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14897.2" systemVersion="19A536g" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="MoodEntity" representedClassName=".MoodEntity" syncable="YES">
+    <entity name="LogEntity" representedClassName="LogEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="date" attributeType="String"/>
+        <attribute name="date_logged" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="moods" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MoodEntity" inverseName="log" inverseEntity="MoodEntity"/>
+    </entity>
+    <entity name="MoodEntity" representedClassName=".MoodEntity" syncable="YES" codeGenerationType="class">
         <attribute name="date_logged" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="month" optional="YES" attributeType="String"/>
         <attribute name="mood" attributeType="String" defaultValueString=""/>
         <attribute name="year" optional="YES" attributeType="String"/>
+        <relationship name="log" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LogEntity" inverseName="moods" inverseEntity="LogEntity"/>
     </entity>
     <elements>
-        <element name="MoodEntity" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="LogEntity" positionX="-243.9375" positionY="-143.56640625" width="152.51171875" height="103"/>
+        <element name="MoodEntity" positionX="-2.61328125" positionY="-18.2421875" width="128" height="133"/>
     </elements>
 </model>

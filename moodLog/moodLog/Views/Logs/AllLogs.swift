@@ -12,6 +12,8 @@ struct AllLogs: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     
     @FetchRequest(fetchRequest: MoodEntity.allMoodsFetchRequest()) var moods: FetchedResults<MoodEntity>
+    @FetchRequest(fetchRequest: LogEntity.allLogRequest()) var logs: FetchedResults<LogEntity>
+    
     @State private var showModal: Bool = false
     
     var body: some View {
@@ -23,9 +25,8 @@ struct AllLogs: View {
             }.sheet(isPresented: $showModal){
                 MoodForm().environment(\.managedObjectContext, self.managedObjectContext)
             }
-            
-            List(self.moods){ entry in
-                LogRow(entry: entry)
+            List(self.logs, id: \.id!){log in
+                LogRow(log: log)
             }
         }
     }
