@@ -8,18 +8,36 @@
 
 import SwiftUI
 
+struct AddMood: View {
+    var body: some View {
+        Button(action: { print("Add mood")}) {
+            Text("+ Mood")
+        }
+    }
+}
+
 struct MoodDetails: View {
     var body: some View {
         ScrollView{
-            Text("MOODS: :) :D")
+            HStack{
+                Text("MOODS: :) :D")
+            }
             ActivityChart()
+            HStack{
+                Text("Weight: 212lbs")
+                Spacer()
+                Text("- 1.23 lbs")
+            }
         }
             .navigationBarTitle(Text("Month Day, Year"), displayMode: .inline)
+    .navigationBarItems(trailing: AddMood())
     }
 }
 
 struct MoodDetails_Previews: PreviewProvider {
     static var previews: some View {
-        MoodDetails()
+        NavigationView{
+            MoodDetails()
+        }
     }
 }
