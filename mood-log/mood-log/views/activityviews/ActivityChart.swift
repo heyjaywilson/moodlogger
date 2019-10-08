@@ -9,13 +9,17 @@
 import SwiftUI
 
 struct ActivityChart: View {
-    @State private var movePercent = 50
+    @State private var movePercent = 130
     @State private var excePercent = 78
     @State private var stanPercent = 100
     
     var body: some View {
         HStack(alignment: .bottom) {
             VStack{
+                Text("\(movePercent)")
+                    .font(.caption)
+                    .foregroundColor(Color.gray)
+                    .multilineTextAlignment(.center)
                 RoundedRectangle(cornerRadius: 5, style: .circular)
                     .fill(Color.red)
                     .frame(width: 15, height: CGFloat(integerLiteral: movePercent))
@@ -24,6 +28,10 @@ struct ActivityChart: View {
                     .foregroundColor(Color.gray)
             }
             VStack{
+                Text("\(excePercent)")
+                    .font(.caption)
+                    .foregroundColor(Color.gray)
+                    .multilineTextAlignment(.center)
                 RoundedRectangle(cornerRadius: 5, style: .circular)
                     .fill(Color.green)
                     .frame(width: 15, height: CGFloat(integerLiteral: excePercent))
@@ -32,6 +40,10 @@ struct ActivityChart: View {
                     .foregroundColor(Color.gray)
             }
             VStack{
+                Text("\(stanPercent)")
+                    .font(.caption)
+                    .foregroundColor(Color.gray)
+                    .multilineTextAlignment(.center)
                 RoundedRectangle(cornerRadius: 5, style: .circular)
                     .fill(Color.blue)
                     .frame(width: 15, height: CGFloat(integerLiteral: stanPercent))
