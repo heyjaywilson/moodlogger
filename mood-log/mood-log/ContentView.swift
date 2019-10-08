@@ -1,27 +1,24 @@
 //
 //  ContentView.swift
-//  moodLog
+//  mood-log
 //
-//  Created by Maegan Wilson on 8/20/19.
-//  Copyright © 2019 MW. All rights reserved.
+//  Created by Maegan Wilson on 10/7/19.
+//  Copyright © 2019 Maegan Wilson. All rights reserved.
 //
 
 import SwiftUI
 
-/// Description - Tabbed menu navigation
 struct ContentView: View {
-    @Environment(\.managedObjectContext) var managedObjectContext
-    @EnvironmentObject var health: HealthData
-    
     @State private var selection = 0
  
     var body: some View {
         TabView(selection: $selection){
-            AllLogs().environment(\.managedObjectContext, managedObjectContext)
+            Text("First View")
+                .font(.title)
                 .tabItem {
                     VStack {
-                        Image(systemName: "heart.fill")
-                        Text("All")
+                        Image("first")
+                        Text("First")
                     }
                 }
                 .tag(0)
@@ -29,8 +26,8 @@ struct ContentView: View {
                 .font(.title)
                 .tabItem {
                     VStack {
-                        Image(systemName: "heart.slash.fill")
-                        Text("Mood Only")
+                        Image("second")
+                        Text("Second")
                     }
                 }
                 .tag(1)
@@ -39,7 +36,6 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    @EnvironmentObject var health: HealthData
     static var previews: some View {
         ContentView()
     }
