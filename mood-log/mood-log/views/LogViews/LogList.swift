@@ -1,5 +1,5 @@
 //
-//  MoodList.swift
+//  LogList.swift
 //  mood-log
 //
 //  Created by Maegan Wilson on 10/7/19.
@@ -8,13 +8,13 @@
 
 import SwiftUI
 
-struct MoodList: View {
+struct LogList: View {
     var moods: [Mood] = [Mood(mood: "😴", uuid: UUID(), date: Date())]
     var body: some View {
         NavigationView {
             List{
-                NavigationLink(destination: MoodDetails()) {
-                    MoodRow(mood: moods[0])
+                NavigationLink(destination: LogDetails()) {
+                    LogRow(mood: moods[0])
                     }.isDetailLink(true)
             }
             .navigationBarTitle("Mood Log")
@@ -23,8 +23,8 @@ struct MoodList: View {
     }
 }
 
-struct MoodList_Previews: PreviewProvider {
+struct LogList_Previews: PreviewProvider {
     static var previews: some View {
-        MoodList()
+        LogList()
     }
 }

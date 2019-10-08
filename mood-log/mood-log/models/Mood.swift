@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+struct Mood {
+    let mood: String
+    let uuid: UUID
+    let date: Date
+    private let dateFormatter = DateFormatter()
+    
+    func returnMonth() -> String {
+        dateFormatter.dateFormat = "MMMM"
+        return dateFormatter.string(from: date)
+    }
+    
+    func returnDay() -> String {
+        dateFormatter.dateFormat = "d"
+        return dateFormatter.string(from: date)
+    }
+}

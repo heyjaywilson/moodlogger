@@ -1,5 +1,5 @@
 //
-//  MoodRow.swift
+//  LogRow.swift
 //  mood-log
 //
 //  Created by Maegan Wilson on 10/7/19.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct MoodRow: View {
+struct LogRow: View {
     var mood: Mood
     var body: some View {
         HStack(alignment: .center){
@@ -37,8 +37,8 @@ struct MoodRow: View {
     }
 }
 
-struct MoodRow_Previews: PreviewProvider {
+struct LogRow_Previews: PreviewProvider {
     static var previews: some View {
-        MoodRow(mood: Mood(mood: "😴", uuid: UUID(), date: Date()))
+        LogRow(mood: Mood(mood: "😴", uuid: UUID(), date: Date()))
     }
 }

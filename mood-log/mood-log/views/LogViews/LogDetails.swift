@@ -19,7 +19,7 @@ struct AddMood: View {
     }
 }
 
-struct LogDetials: View {
+struct LogDetails: View {
     var body: some View {
         ScrollView{
             HStack{
@@ -37,10 +37,10 @@ struct LogDetials: View {
     }
 }
 
-struct LogDetials_Previews: PreviewProvider {
+struct LogDetails_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            LogDetials()
+            LogDetails()
         }
     }
 }
