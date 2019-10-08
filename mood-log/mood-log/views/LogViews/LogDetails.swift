@@ -32,8 +32,8 @@ struct LogDetails: View {
                 Text("- 1.23 lbs")
             }
         }
-            .navigationBarTitle(Text("Month Day, Year"), displayMode: .inline)
-    .navigationBarItems(trailing: AddMood())
+        .navigationBarTitle(Text("Month Day, Year"), displayMode: .inline)
+        .navigationBarItems(trailing: AddMood())
     }
 }
 
