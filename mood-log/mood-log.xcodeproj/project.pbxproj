@@ -17,6 +17,7 @@
 		3721DEC2234C34F4004688DD /* MoodList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEC1234C34F4004688DD /* MoodList.swift */; };
 		3721DEC4234C357C004688DD /* MoodRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEC3234C357C004688DD /* MoodRow.swift */; };
 		3721DEC7234C3678004688DD /* ActivityChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEC6234C3678004688DD /* ActivityChart.swift */; };
+		3721DEC9234C3E2A004688DD /* MoodDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEC8234C3E2A004688DD /* MoodDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		3721DEC1234C34F4004688DD /* MoodList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodList.swift; sourceTree = "<group>"; };
 		3721DEC3234C357C004688DD /* MoodRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodRow.swift; sourceTree = "<group>"; };
 		3721DEC6234C3678004688DD /* ActivityChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityChart.swift; sourceTree = "<group>"; };
+		3721DEC8234C3E2A004688DD /* MoodDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				3721DEC1234C34F4004688DD /* MoodList.swift */,
 				3721DEC3234C357C004688DD /* MoodRow.swift */,
+				3721DEC8234C3E2A004688DD /* MoodDetails.swift */,
 			);
 			path = moodviews;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3721DEC7234C3678004688DD /* ActivityChart.swift in Sources */,
+				3721DEC9234C3E2A004688DD /* MoodDetails.swift in Sources */,
 				3721DEA8234C348E004688DD /* AppDelegate.swift in Sources */,
 				3721DEAA234C348E004688DD /* SceneDelegate.swift in Sources */,
 				3721DEC2234C34F4004688DD /* MoodList.swift in Sources */,

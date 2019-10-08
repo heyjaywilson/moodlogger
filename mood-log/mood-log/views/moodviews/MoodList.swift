@@ -12,10 +12,15 @@ struct MoodList: View {
     var body: some View {
         NavigationView {
             List{
-                MoodRow()
-                MoodRow()
-                MoodRow()
-                MoodRow()
+                NavigationLink(destination: MoodDetails()) {
+                    MoodRow()
+                }.isDetailLink(true)
+                NavigationLink(destination: MoodDetails()) {
+                    MoodRow()
+                }.isDetailLink(true)
+                NavigationLink(destination: MoodDetails()) {
+                    MoodRow()
+                }.isDetailLink(true)
             }
             .navigationBarTitle("Mood Log")
         }
