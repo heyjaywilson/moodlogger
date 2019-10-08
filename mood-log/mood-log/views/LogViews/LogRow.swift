@@ -9,14 +9,15 @@
 import SwiftUI
 
 struct MoodRow: View {
+    var mood: Mood
     var body: some View {
         HStack(alignment: .center){
             VStack{
-                Text("month")
+                Text(mood.returnMonth())
                     .fontWeight(.black)
-                Text("day")
+                Text(mood.returnDay())
             }
-                .padding(.trailing)
+            .padding(.trailing)
             VStack{
                 Text("MOODS GO HERE").padding(.bottom)
                 HStack(alignment: .center, spacing: 20) {
@@ -38,6 +39,6 @@ struct MoodRow: View {
 
 struct MoodRow_Previews: PreviewProvider {
     static var previews: some View {
-        MoodRow()
+        MoodRow(mood: Mood(mood: "😴", uuid: UUID(), date: Date()))
     }
 }

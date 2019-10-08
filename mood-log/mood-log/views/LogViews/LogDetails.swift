@@ -1,5 +1,5 @@
 //
-//  MoodDetails.swift
+//  LogDetials.swift
 //  mood-log
 //
 //  Created by Maegan Wilson on 10/7/19.
@@ -11,12 +11,15 @@ import SwiftUI
 struct AddMood: View {
     var body: some View {
         Button(action: { print("Add mood")}) {
-            Text("+ Mood")
+            HStack{
+                Image(systemName: "plus.app.fill")
+                Text("Mood")
+            }
         }
     }
 }
 
-struct MoodDetails: View {
+struct LogDetials: View {
     var body: some View {
         ScrollView{
             HStack{
@@ -34,10 +37,10 @@ struct MoodDetails: View {
     }
 }
 
-struct MoodDetails_Previews: PreviewProvider {
+struct LogDetials_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            MoodDetails()
+            LogDetials()
         }
     }
 }

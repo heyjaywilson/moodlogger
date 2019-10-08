@@ -9,20 +9,16 @@
 import SwiftUI
 
 struct MoodList: View {
+    var moods: [Mood] = [Mood(mood: "😴", uuid: UUID(), date: Date())]
     var body: some View {
         NavigationView {
             List{
                 NavigationLink(destination: MoodDetails()) {
-                    MoodRow()
-                }.isDetailLink(true)
-                NavigationLink(destination: MoodDetails()) {
-                    MoodRow()
-                }.isDetailLink(true)
-                NavigationLink(destination: MoodDetails()) {
-                    MoodRow()
-                }.isDetailLink(true)
+                    MoodRow(mood: moods[0])
+                    }.isDetailLink(true)
             }
             .navigationBarTitle("Mood Log")
+            .animation(.linear(duration: 2.0))
         }
     }
 }
