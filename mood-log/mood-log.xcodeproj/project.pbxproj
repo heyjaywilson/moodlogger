@@ -20,6 +20,9 @@
 		3721DEC9234C3E2A004688DD /* LogDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEC8234C3E2A004688DD /* LogDetails.swift */; };
 		37464902234CB05200F20B67 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37464901234CB05200F20B67 /* Mood.swift */; };
 		378B97D0234D60B300740314 /* BarForCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B97CF234D60B300740314 /* BarForCharts.swift */; };
+		378B97D6234D78A800740314 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378B97D5234D78A800740314 /* HealthKit.framework */; };
+		378B97D9234DFB8000740314 /* HealthKitAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B97D8234DFB8000740314 /* HealthKitAuth.swift */; };
+		378B97DB234E033E00740314 /* HealthSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B97DA234E033E00740314 /* HealthSamples.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,10 @@
 		3721DEC8234C3E2A004688DD /* LogDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetails.swift; sourceTree = "<group>"; };
 		37464901234CB05200F20B67 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
 		378B97CF234D60B300740314 /* BarForCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarForCharts.swift; sourceTree = "<group>"; };
+		378B97D3234D78A700740314 /* mood-log.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "mood-log.entitlements"; sourceTree = "<group>"; };
+		378B97D5234D78A800740314 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		378B97D8234DFB8000740314 /* HealthKitAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitAuth.swift; sourceTree = "<group>"; };
+		378B97DA234E033E00740314 /* HealthSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthSamples.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				378B97D6234D78A800740314 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,6 +64,7 @@
 			children = (
 				3721DEA6234C348E004688DD /* mood-log */,
 				3721DEA5234C348E004688DD /* Products */,
+				378B97D4234D78A800740314 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +79,8 @@
 		3721DEA6234C348E004688DD /* mood-log */ = {
 			isa = PBXGroup;
 			children = (
+				378B97D3234D78A700740314 /* mood-log.entitlements */,
+				378B97D1234D788400740314 /* data */,
 				3721DEBF234C34C9004688DD /* views */,
 				3721DEBE234C34B0004688DD /* models */,
 				3721DEA7234C348E004688DD /* AppDelegate.swift */,
@@ -78,7 +89,6 @@
 				3721DEB0234C3490004688DD /* Assets.xcassets */,
 				3721DEB5234C3490004688DD /* LaunchScreen.storyboard */,
 				3721DEB8234C3490004688DD /* Info.plist */,
-				3721DEAB234C348E004688DD /* mood_log.xcdatamodeld */,
 				3721DEB2234C3490004688DD /* Preview Content */,
 			);
 			path = "mood-log";
@@ -134,6 +144,40 @@
 				378B97CF234D60B300740314 /* BarForCharts.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		378B97D1234D788400740314 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				378B97D7234DFB5E00740314 /* healthInfo */,
+				378B97D2234D788B00740314 /* coredata */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		378B97D2234D788B00740314 /* coredata */ = {
+			isa = PBXGroup;
+			children = (
+				3721DEAB234C348E004688DD /* mood_log.xcdatamodeld */,
+			);
+			path = coredata;
+			sourceTree = "<group>";
+		};
+		378B97D4234D78A800740314 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				378B97D5234D78A800740314 /* HealthKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		378B97D7234DFB5E00740314 /* healthInfo */ = {
+			isa = PBXGroup;
+			children = (
+				378B97D8234DFB8000740314 /* HealthKitAuth.swift */,
+				378B97DA234E033E00740314 /* HealthSamples.swift */,
+			);
+			path = healthInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +260,8 @@
 				3721DEC2234C34F4004688DD /* LogList.swift in Sources */,
 				3721DEAF234C348E004688DD /* ContentView.swift in Sources */,
 				3721DEAD234C348E004688DD /* mood_log.xcdatamodeld in Sources */,
+				378B97DB234E033E00740314 /* HealthSamples.swift in Sources */,
+				378B97D9234DFB8000740314 /* HealthKitAuth.swift in Sources */,
 				3721DEC4234C357C004688DD /* LogRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "mood-log/mood-log.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"mood-log/Preview Content\"";
 				DEVELOPMENT_TEAM = ZDK82FGR3Z;
@@ -364,7 +411,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appsbymw.mood-log";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -372,6 +419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "mood-log/mood-log.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"mood-log/Preview Content\"";
 				DEVELOPMENT_TEAM = ZDK82FGR3Z;
@@ -384,7 +432,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.appsbymw.mood-log";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

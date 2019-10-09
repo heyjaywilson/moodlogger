@@ -10,6 +10,8 @@ import SwiftUI
 
 struct LogRow: View {
     var mood: Mood
+    @State private var healthSamples: HKSamplesForDate = HKSamplesForDate(date: Date())
+    @State private var steps: Double = 0.0
     var body: some View {
         HStack(alignment: .center){
             VStack{
@@ -27,11 +29,16 @@ struct LogRow: View {
                     }
                     VStack {
                         Text("🦶")
-                        Text("\(158921234)")
+                        Text("\(steps.string(fractionDigits: 0))")
                     }
                 }
             }.padding(.vertical)
             ActivityChart()
+        }.onAppear{
+            self.healthSamples = HKSamplesForDate(date: self.mood.date)
+            self.healthSamples.getSteps { sum in
+                self.steps = sum
+            }
         }
     }
 }
