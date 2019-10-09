@@ -17,9 +17,9 @@ struct LogRow: View {
                     .fontWeight(.black)
                 Text(mood.returnDay())
             }
-            .padding(.trailing)
-            VStack{
-                Text("MOODS GO HERE").padding(.bottom)
+            VStack(alignment: .center){
+                Text("MOODS GO HERE")
+                Spacer()
                 HStack(alignment: .center, spacing: 20) {
                     VStack {
                         Text("😴")
@@ -27,11 +27,10 @@ struct LogRow: View {
                     }
                     VStack {
                         Text("🦶")
-                        Text("15,892")
+                        Text("\(158921234)")
                     }
                 }
-            }
-                .padding(.trailing)
+            }.padding(.vertical)
             ActivityChart()
         }
     }

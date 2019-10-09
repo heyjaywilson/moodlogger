@@ -13,9 +13,31 @@ struct LogList: View {
     var body: some View {
         NavigationView {
             List{
-                NavigationLink(destination: LogDetails()) {
-                    LogRow(mood: moods[0])
+                Section(header: Text("2019").font(.title).padding(.vertical)){
+                    NavigationLink(destination: LogDetails()) {
+                        LogRow(mood: moods[0])
                     }.isDetailLink(true)
+                    NavigationLink(destination: LogDetails()) {
+                        LogRow(mood: moods[0])
+                    }.isDetailLink(true)
+                }
+                Section(header: Text("2019").font(.title).padding(.vertical)){
+                    NavigationLink(destination: LogDetails()) {
+                        LogRow(mood: moods[0])
+                    }.isDetailLink(true)
+                    NavigationLink(destination: LogDetails()) {
+                        LogRow(mood: moods[0])
+                    }.isDetailLink(true)
+                }
+                Section(header: Text("2019").font(.title).padding(.vertical)){
+                    NavigationLink(destination: LogDetails()) {
+                        LogRow(mood: moods[0])
+                    }.isDetailLink(true)
+                    NavigationLink(destination: LogDetails()) {
+                        LogRow(mood: moods[0])
+                    }.isDetailLink(true)
+                }
+
             }
             .navigationBarTitle("Mood Log")
             .animation(.linear(duration: 2.0))

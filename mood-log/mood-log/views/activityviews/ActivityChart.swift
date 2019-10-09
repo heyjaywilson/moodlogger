@@ -9,62 +9,15 @@
 import SwiftUI
 
 struct ActivityChart: View {
-    @State private var movePercent = 130
-    @State private var excePercent = 78
-    @State private var stanPercent = 100
+    @State private var movePercent = 130.0
+    @State private var excePercent = 78.0
+    @State private var stanPercent = 100.0
     
     var body: some View {
         HStack(alignment: .bottom) {
-            VStack{
-                Text("\(movePercent)")
-                    .font(.caption)
-                    .foregroundColor(Color.gray)
-                    .multilineTextAlignment(.center)
-                RoundedRectangle(cornerRadius: 5, style: .circular)
-                    .fill(Color.red)
-                    .frame(width: 15, height: CGFloat(integerLiteral: movePercent))
-                Text("M")
-                    .font(.subheadline)
-                    .foregroundColor(Color.gray)
-            }
-            VStack{
-                Text("\(excePercent)")
-                    .font(.caption)
-                    .foregroundColor(Color.gray)
-                    .multilineTextAlignment(.center)
-                RoundedRectangle(cornerRadius: 5, style: .circular)
-                    .fill(Color.green)
-                    .frame(width: 15, height: CGFloat(integerLiteral: excePercent))
-                Text("E")
-                    .font(.subheadline)
-                    .foregroundColor(Color.gray)
-            }
-            VStack{
-                Text("\(stanPercent)")
-                    .font(.caption)
-                    .foregroundColor(Color.gray)
-                    .multilineTextAlignment(.center)
-                RoundedRectangle(cornerRadius: 5, style: .circular)
-                    .fill(Color.blue)
-                    .frame(width: 15, height: CGFloat(integerLiteral: stanPercent))
-                Text("S")
-                    .font(.subheadline)
-                    .foregroundColor(Color.gray)
-            }
-        }.onAppear {
-            self.checkIfAbove()
-        }
-    }
-    
-    func checkIfAbove(){
-        if movePercent > 100 {
-            movePercent = 100
-        }
-        if excePercent > 100 {
-            excePercent = 100
-        }
-        if stanPercent > 100 {
-            stanPercent = 100
+            BarForCharts(barLabel: "M", barAmt: self.movePercent, fill: Color.red)
+            BarForCharts(barLabel: "E", barAmt: self.excePercent, fill: Color.yellow)
+            BarForCharts(barLabel: "S", barAmt: self.stanPercent, fill: Color.blue)
         }
     }
 }
