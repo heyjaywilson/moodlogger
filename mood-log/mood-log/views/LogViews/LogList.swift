@@ -13,10 +13,10 @@ struct LogList: View {
     var body: some View {
         NavigationView {
             List{
-                NavigationLink(destination: LogDetails()) {
+                NavigationLink(destination: LogDetails(date: Date())) {
                     LogRow(mood: moods[0])
                 }.isDetailLink(true)
-                NavigationLink(destination: LogDetails()) {
+                NavigationLink(destination: LogDetails(date: Date())) {
                     LogRow(mood: moods[0])
                 }.isDetailLink(true)
             }

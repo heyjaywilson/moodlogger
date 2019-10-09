@@ -20,27 +20,76 @@ struct AddMood: View {
 }
 
 struct LogDetails: View {
+    var date: Date
+    @State private var steps: Double = 0.0
     var body: some View {
         ScrollView{
             HStack{
                 Text("MOODS: :) :D")
             }
-            ActivityChart()
+            // Personal Info
             HStack{
-                Text("Weight: 212lbs")
+                Text("Weight")
                 Spacer()
-                Text("- 1.23 lbs")
+                Text("212lbs")
+            }
+            // Activity
+            HStack(alignment: .bottom){
+                VStack{
+                    HStack{
+                        Text("Active Energy:")
+                        Spacer()
+                        Text("1")
+                    }
+                    HStack {
+                        Text("Steps:")
+                        Spacer()
+                        Text("\(steps.string(fractionDigits: 0))")
+                    }
+                    HStack{
+                        Text("Walk & Run Distance:")
+                        Spacer()
+                        Text("1")
+                    }
+                    HStack{
+                        Text("Workouts:")
+                        Spacer()
+                        Text("1")
+                    }
+                    HStack{
+                        Text("Exercise Minutes:")
+                        Spacer()
+                        Text("1")
+                    }
+                    HStack{
+                        Text("Standing Minutes:")
+                        Spacer()
+                        Text("1")
+                    }
+                }
+                ActivityChart()
             }
         }
         .navigationBarTitle(Text("Month Day, Year"), displayMode: .inline)
         .navigationBarItems(trailing: AddMood())
+        .padding(.horizontal)
+        .onAppear{
+            self.getHealthInfo()
+        }
+    }
+    
+    func getHealthInfo(){
+        let healthSamples = HKSamplesForDate(date: date)
+        healthSamples.getSteps { sum in
+            self.steps = sum
+        }
     }
 }
 
 struct LogDetails_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            LogDetails()
+            LogDetails(date: Date())
         }
     }
 }
