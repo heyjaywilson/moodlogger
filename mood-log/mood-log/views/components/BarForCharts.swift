@@ -15,10 +15,6 @@ struct BarForCharts: View {
     
     var body: some View {
         VStack {
-            Text("\(barAmt.string(fractionDigits: 0))%")
-                .font(.caption)
-                .foregroundColor(Color.gray)
-                .multilineTextAlignment(.center)
             RoundedRectangle(cornerRadius: 5, style: .circular)
                 .fill(fill)
                 .frame(width: 15, height: self.getHeight())

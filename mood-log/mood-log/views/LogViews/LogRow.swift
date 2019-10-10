@@ -33,6 +33,7 @@ struct LogRow: View {
                     }
                 }
             }.padding(.vertical)
+            Spacer()
             ActivityChart()
         }.onAppear{
             self.healthSamples = HKSamplesForDate(date: self.mood.date)
