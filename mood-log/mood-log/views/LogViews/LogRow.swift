@@ -15,9 +15,9 @@ struct LogRow: View {
     var body: some View {
         HStack(alignment: .center){
             VStack{
-                Text(mood.returnMonth())
+                Text(mood.date.returnMonthAsString())
                     .fontWeight(.black)
-                Text(mood.returnDay())
+                Text(mood.date.returnDayAsString())
             }
             VStack(alignment: .center){
                 Text("MOODS GO HERE")

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370C80F9234EBFC100EA198E /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370C80F8234EBFC100EA198E /* DateExtensions.swift */; };
 		3721DEA8234C348E004688DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEA7234C348E004688DD /* AppDelegate.swift */; };
 		3721DEAA234C348E004688DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEA9234C348E004688DD /* SceneDelegate.swift */; };
 		3721DEAD234C348E004688DD /* mood_log.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEAB234C348E004688DD /* mood_log.xcdatamodeld */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		370C80F8234EBFC100EA198E /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		3721DEA4234C348E004688DD /* mood-log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mood-log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3721DEA7234C348E004688DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3721DEA9234C348E004688DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		370C80F7234EBFA900EA198E /* helpers */ = {
+			isa = PBXGroup;
+			children = (
+				370C80F8234EBFC100EA198E /* DateExtensions.swift */,
+			);
+			path = helpers;
+			sourceTree = "<group>";
+		};
 		3721DE9B234C348E004688DD = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +89,7 @@
 		3721DEA6234C348E004688DD /* mood-log */ = {
 			isa = PBXGroup;
 			children = (
+				370C80F7234EBFA900EA198E /* helpers */,
 				378B97D3234D78A700740314 /* mood-log.entitlements */,
 				378B97D1234D788400740314 /* data */,
 				3721DEBF234C34C9004688DD /* views */,
@@ -263,6 +274,7 @@
 				378B97DB234E033E00740314 /* HealthSamples.swift in Sources */,
 				378B97D9234DFB8000740314 /* HealthKitAuth.swift in Sources */,
 				3721DEC4234C357C004688DD /* LogRow.swift in Sources */,
+				370C80F9234EBFC100EA198E /* DateExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

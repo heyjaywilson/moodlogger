@@ -25,7 +25,9 @@ struct LogDetails: View {
     var body: some View {
         ScrollView{
             HStack{
-                Text("MOODS: :) :D")
+                Text("Moods")
+                Spacer()
+                Text(":D")
             }
             // Personal Info
             HStack{
@@ -70,7 +72,7 @@ struct LogDetails: View {
                 ActivityChart()
             }
         }
-        .navigationBarTitle(Text("Month Day, Year"), displayMode: .inline)
+        .navigationBarTitle(Text("\(date.returnLongMonth()) \(date.returnDayAsString())"), displayMode: .large)
         .navigationBarItems(trailing: AddMood())
         .padding(.horizontal)
         .onAppear{

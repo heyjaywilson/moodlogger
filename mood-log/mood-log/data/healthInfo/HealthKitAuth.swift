@@ -12,11 +12,12 @@ import HealthKit
 class HealthKitAuth {
     let hkstore = HKHealthStore()
     let healthToWrite: Set<HKSampleType> = []
-    let healthToRead: Set<HKObjectType> = [HKObjectType.workoutType(),
-                                             HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
-                                             HKObjectType.quantityType(forIdentifier: .appleExerciseTime)!,
-                                             HKObjectType.quantityType(forIdentifier: .appleStandTime)!,
-                                             HKObjectType.quantityType(forIdentifier: .stepCount)!]
+    let healthToRead: Set<HKObjectType> = [HKObjectType.quantityType(forIdentifier: .bodyMass)!,
+                                           HKObjectType.workoutType(),
+                                           HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
+                                           HKObjectType.quantityType(forIdentifier: .appleExerciseTime)!,
+                                           HKObjectType.quantityType(forIdentifier: .appleStandTime)!,
+                                           HKObjectType.quantityType(forIdentifier: .stepCount)!]
     var userAcceptedHealth: Bool
     
     init(){
