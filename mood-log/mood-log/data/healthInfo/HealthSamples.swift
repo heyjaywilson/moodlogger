@@ -33,4 +33,26 @@ struct HKSamplesForDate{
         
         hkstore.execute(query)
     }
+    
+    func getWeight(completion: @escaping(Double) -> Void) {
+        let bodymass = HKObjectType.quantityType(forIdentifier: .bodyMass)!
+        
+        let calendar = Calendar.current
+        let newday = calendar.startOfDay(for: self.date)
+        let predicate  = HKQuery.predicateForSamples(withStart: newday, end: date, options: .strictEndDate)
+        let limit = 1
+        
+        let query = HKSampleQuery.init(sampleType: bodymass, predicate: predicate, limit: limit, sortDescriptors: nil) { (query, result, error) in
+            guard let result = result
+            else {
+                completion(0.0)
+                return
+            }
+            let res: Array<HKQuantitySample> = result as! Array<HKQuantitySample>
+            print(res[0].quantity.doubleValue(for: HKUnit(from: .pound)))
+            completion(res[0].quantity.doubleValue(for: HKUnit(from: .pound)))
+        }
+        
+        hkstore.execute(query)
+    }
 }

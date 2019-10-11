@@ -22,6 +22,7 @@ struct AddMood: View {
 struct LogDetails: View {
     var date: Date
     @State private var steps: Double = 0.0
+    @State private var weight: Double = 0.0
     var body: some View {
         ScrollView{
             HStack{
@@ -33,7 +34,7 @@ struct LogDetails: View {
             HStack{
                 Text("Weight")
                 Spacer()
-                Text("212lbs")
+                Text("\(weight.string(fractionDigits: 2))")
             }
             // Activity
             HStack(alignment: .bottom){
@@ -84,6 +85,9 @@ struct LogDetails: View {
         let healthSamples = HKSamplesForDate(date: date)
         healthSamples.getSteps { sum in
             self.steps = sum
+        }
+        healthSamples.getWeight { weight in
+            self.weight = weight
         }
     }
 }
