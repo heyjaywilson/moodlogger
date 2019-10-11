@@ -21,61 +21,38 @@ struct AddMood: View {
 
 struct LogDetails: View {
     var date: Date
-    @State private var steps: Double = 0.0
+    @State private var steps: Int = 0
     @State private var weight: Double = 0.0
     var body: some View {
-        ScrollView{
-            HStack{
-                Text("Moods")
-                Spacer()
-                Text(":D")
-            }
-            // Personal Info
-            HStack{
-                Text("Weight")
-                Spacer()
-                Text("\(weight.string(fractionDigits: 2))")
-            }
-            // Activity
-            HStack(alignment: .bottom){
-                VStack{
-                    HStack{
-                        Text("Active Energy:")
-                        Spacer()
-                        Text("1")
-                    }
-                    HStack {
-                        Text("Steps:")
-                        Spacer()
-                        Text("\(steps.string(fractionDigits: 0))")
-                    }
-                    HStack{
-                        Text("Walk & Run Distance:")
-                        Spacer()
-                        Text("1")
-                    }
-                    HStack{
-                        Text("Workouts:")
-                        Spacer()
-                        Text("1")
-                    }
-                    HStack{
-                        Text("Exercise Minutes:")
-                        Spacer()
-                        Text("1")
-                    }
-                    HStack{
-                        Text("Standing Minutes:")
-                        Spacer()
-                        Text("1")
-                    }
+        VStack{
+            List{
+                HStack{
+                    Text("Moods")
+                    Spacer()
+                    Text(":D")
                 }
-                ActivityChart()
+                SingleHealthInfo(label: "Weight", amt: "\(weight.string(fractionDigits: 2)) lbs")
+                Section(header: Text("Activity")) {
+                    HStack(alignment: .center){
+                        Text("Summary")
+                        Spacer()
+                        ActivityChart()
+                    }
+                    SingleHealthInfo(label: "Active Energy", amt: "0 cals")
+                        .foregroundColor(.red)
+                    SingleHealthInfo(label: "Steps", amt: "\(steps)")
+                    SingleHealthInfo(label: "Walk & Run Distance", amt:"\(1290)")
+                    SingleHealthInfo(label: "Exercise Minutes", amt: "23")
+                        .foregroundColor(.yellow)
+                    SingleHealthInfo(label: "Workouts", amt: "3")
+                    SingleHealthInfo(label: "Stand Minutes", amt: "40")
+                        .foregroundColor(.blue)
+                }
             }
+            .listStyle(GroupedListStyle())
         }
         .navigationBarTitle(Text("\(date.returnLongMonth()) \(date.returnDayAsString())"), displayMode: .large)
         .navigationBarItems(trailing: AddMood())
-        .padding(.horizontal)
         .onAppear{
             self.getHealthInfo()
         }
@@ -84,7 +61,7 @@ struct LogDetails: View {
     func getHealthInfo(){
         let healthSamples = HKSamplesForDate(date: date)
         healthSamples.getSteps { sum in
-            self.steps = sum
+            self.steps = Int(sum.rounded())
         }
         healthSamples.getWeight { weight in
             self.weight = weight

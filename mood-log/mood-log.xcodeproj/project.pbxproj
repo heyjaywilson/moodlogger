@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		370C80F9234EBFC100EA198E /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370C80F8234EBFC100EA198E /* DateExtensions.swift */; };
+		370C80FF235018CF00EA198E /* SingleHealthInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370C80FE235018CF00EA198E /* SingleHealthInfo.swift */; };
 		3721DEA8234C348E004688DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEA7234C348E004688DD /* AppDelegate.swift */; };
 		3721DEAA234C348E004688DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEA9234C348E004688DD /* SceneDelegate.swift */; };
 		3721DEAD234C348E004688DD /* mood_log.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEAB234C348E004688DD /* mood_log.xcdatamodeld */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		370C80F8234EBFC100EA198E /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		370C80FE235018CF00EA198E /* SingleHealthInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleHealthInfo.swift; sourceTree = "<group>"; };
 		3721DEA4234C348E004688DD /* mood-log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mood-log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3721DEA7234C348E004688DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3721DEA9234C348E004688DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 				370C80F8234EBFC100EA198E /* DateExtensions.swift */,
 			);
 			path = helpers;
+			sourceTree = "<group>";
+		};
+		370C80FD235018BC00EA198E /* healthviews */ = {
+			isa = PBXGroup;
+			children = (
+				370C80FE235018CF00EA198E /* SingleHealthInfo.swift */,
+			);
+			path = healthviews;
 			sourceTree = "<group>";
 		};
 		3721DE9B234C348E004688DD = {
@@ -124,6 +134,7 @@
 		3721DEBF234C34C9004688DD /* views */ = {
 			isa = PBXGroup;
 			children = (
+				370C80FD235018BC00EA198E /* healthviews */,
 				378B97CE234D60A000740314 /* components */,
 				3721DEC5234C3669004688DD /* activityviews */,
 				3721DEC0234C34DC004688DD /* LogViews */,
@@ -273,6 +284,7 @@
 				3721DEAD234C348E004688DD /* mood_log.xcdatamodeld in Sources */,
 				378B97DB234E033E00740314 /* HealthSamples.swift in Sources */,
 				378B97D9234DFB8000740314 /* HealthKitAuth.swift in Sources */,
+				370C80FF235018CF00EA198E /* SingleHealthInfo.swift in Sources */,
 				3721DEC4234C357C004688DD /* LogRow.swift in Sources */,
 				370C80F9234EBFC100EA198E /* DateExtensions.swift in Sources */,
 			);
