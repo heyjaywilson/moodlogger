@@ -22,16 +22,55 @@ struct AddMood: View {
 struct LogDetails: View {
     var date: Date
     @State private var steps: Int = 0
-    @State private var weight: Double = 0.0
+    @State private var weight: Double = 120.0
     var body: some View {
         VStack{
             List{
-                HStack{
-                    Text("Moods")
-                    Spacer()
-                    Text(":D")
+                Section(header: Text("Mood")){
+                    VStack{
+                        HStack{
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                        }
+                        HStack{
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                        }
+                        HStack{
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                            Text(":D")
+                        }
+                    }
                 }
-                SingleHealthInfo(label: "Weight", amt: "\(weight.string(fractionDigits: 2)) lbs")
+                Section(header: Text("Body")){
+                    SingleHealthInfo(label: "Body Mass Index", amt: "34.44 BMI")
+                    SingleHealthInfo(label: "Body Fat Percentage", amt: "34%")
+                    SingleHealthInfo(label: "Weight", amt: "\(weight.string(fractionDigits: 2)) lbs")
+                }
                 Section(header: Text("Activity")) {
                     HStack(alignment: .center){
                         Text("Summary")
