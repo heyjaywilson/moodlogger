@@ -13,7 +13,7 @@ class HealthKitAuth {
     let hkstore = HKHealthStore()
     let healthToWrite: Set<HKSampleType> = []
     let healthToRead: Set<HKObjectType> = [HKObjectType.quantityType(forIdentifier: .bodyMass)!,
-                                           HKObjectType.workoutType(),
+                                           HKObjectType.workoutType(),HKObjectType.activitySummaryType(),
                                            HKObjectType.quantityType(forIdentifier: .activeEnergyBurned)!,
                                            HKObjectType.quantityType(forIdentifier: .appleExerciseTime)!,
                                            HKObjectType.quantityType(forIdentifier: .appleStandTime)!,

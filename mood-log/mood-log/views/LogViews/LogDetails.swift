@@ -105,6 +105,7 @@ struct LogDetails: View {
         healthSamples.getWeight { weight in
             self.weight = weight
         }
+        healthSamples.getActivity()
     }
 }
 

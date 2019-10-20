@@ -44,13 +44,39 @@ struct HKSamplesForDate{
         
         let query = HKSampleQuery.init(sampleType: bodymass, predicate: predicate, limit: limit, sortDescriptors: nil) { (query, result, error) in
             guard let result = result
-            else {
-                completion(0.0)
-                return
+                else {
+                    completion(0.0)
+                    return
             }
             let res: Array<HKQuantitySample> = result as! Array<HKQuantitySample>
             print(res[0].quantity.doubleValue(for: HKUnit(from: .pound)))
             completion(res[0].quantity.doubleValue(for: HKUnit(from: .pound)))
+        }
+        
+        hkstore.execute(query)
+    }
+    
+    func getActivity(){
+        let calendar = Calendar.current
+        let beginDay = calendar.startOfDay(for: self.date)
+        var begin = calendar.dateComponents(
+            [ .year, .month, .day ],
+            from: beginDay
+        )
+        begin.calendar = calendar
+        
+        var end = calendar.dateComponents([ .year, .month, .day ], from: date)
+        end.calendar = calendar
+        
+        let predicate = HKQuery.predicate(forActivitySummariesBetweenStart: begin, end: end)
+        
+        let query = HKActivitySummaryQuery(predicate: predicate) { (query, summaries, error) in
+            guard let summaries = summaries
+                else {
+                    print(error as Any)
+                    return
+            }
+            print(summaries)
         }
         
         hkstore.execute(query)
