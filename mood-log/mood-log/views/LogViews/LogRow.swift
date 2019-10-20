@@ -12,6 +12,7 @@ struct LogRow: View {
     var mood: Mood
     @State private var healthSamples: HKSamplesForDate = HKSamplesForDate(date: Date())
     @State private var steps: Double = 0.0
+    @State private var actSum: ActivitySum = ActivitySum()
     var body: some View {
         HStack(alignment: .center){
             VStack{
@@ -34,11 +35,14 @@ struct LogRow: View {
                 }
             }.padding(.vertical)
             Spacer()
-            ActivityChart()
+            ActivityChart(movePercent: actSum.percentEnergy, excePercent: 12.0, stanPercent: 100.0)
         }.onAppear{
             self.healthSamples = HKSamplesForDate(date: self.mood.date)
             self.healthSamples.getSteps { sum in
                 self.steps = sum
+            }
+            self.healthSamples.getActivity{ sum in
+                self.actSum = sum
             }
         }
     }

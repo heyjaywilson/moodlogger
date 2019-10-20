@@ -56,7 +56,7 @@ struct HKSamplesForDate{
         hkstore.execute(query)
     }
     
-    func getActivity(){
+    func getActivity(completion: @escaping(ActivitySum) -> Void){
         let calendar = Calendar.current
         let beginDay = calendar.startOfDay(for: self.date)
         var begin = calendar.dateComponents(
@@ -76,7 +76,15 @@ struct HKSamplesForDate{
                     print(error as Any)
                     return
             }
-            print(summaries)
+            let sum = summaries[0]
+            let activity: ActivitySum = ActivitySum(
+                energyBurned: sum.activeEnergyBurned,
+                goalEnergy: sum.activeEnergyBurnedGoal,
+                exerciseTime: sum.appleExerciseTime,
+                goalExercise: sum.appleExerciseTimeGoal,
+                standHours: sum.appleStandHours,
+                goalStand: sum.appleStandHoursGoal)
+            completion(activity)
         }
         
         hkstore.execute(query)

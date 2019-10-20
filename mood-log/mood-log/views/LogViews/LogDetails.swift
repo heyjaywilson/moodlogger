@@ -23,6 +23,10 @@ struct LogDetails: View {
     var date: Date
     @State private var steps: Int = 0
     @State private var weight: Double = 120.0
+    @State private var actSum: ActivitySum = ActivitySum()
+    @State private var movePercent: Double = 0.0
+    @State private var excerPercent: Double = 0.0
+    @State private var standPercent: Double = 0.0
     var body: some View {
         VStack{
             List{
@@ -51,9 +55,9 @@ struct LogDetails: View {
                     HStack(alignment: .center){
                         Text("Summary")
                         Spacer()
-                        ActivityChart()
+                        ActivityChart(movePercent: movePercent, excePercent: excerPercent, stanPercent: standPercent)
                     }
-                    SingleHealthInfo(label: "Active Energy", amt: "0 cals")
+                    SingleHealthInfo(label: "Active Energy", amt: "\(actSum.energy.string(fractionDigits: 2)) cals")
                         .foregroundColor(.red)
                     SingleHealthInfo(label: "Steps", amt: "\(steps)")
                     SingleHealthInfo(label: "Walk & Run Distance", amt:"\(1290)")
@@ -81,7 +85,12 @@ struct LogDetails: View {
         healthSamples.getWeight { weight in
             self.weight = weight
         }
-        healthSamples.getActivity()
+        healthSamples.getActivity{ sum in
+            self.actSum = sum
+            self.movePercent = sum.percentEnergy
+            self.excerPercent = sum.percentExercise
+            self.standPercent = sum.percentStand
+        }
     }
 }
 

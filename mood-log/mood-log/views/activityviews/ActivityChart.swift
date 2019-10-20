@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct ActivityChart: View {
-    @State private var movePercent = 130.0
-    @State private var excePercent = 78.0
-    @State private var stanPercent = 100.0
+    var movePercent = 130.0
+    var excePercent = 78.0
+    var stanPercent = 50.0
     
     var body: some View {
         HStack(alignment: .bottom) {

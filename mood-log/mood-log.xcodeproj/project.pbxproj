@@ -26,6 +26,7 @@
 		378B97D6234D78A800740314 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378B97D5234D78A800740314 /* HealthKit.framework */; };
 		378B97D9234DFB8000740314 /* HealthKitAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B97D8234DFB8000740314 /* HealthKitAuth.swift */; };
 		378B97DB234E033E00740314 /* HealthSamples.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B97DA234E033E00740314 /* HealthSamples.swift */; };
+		37BE4946235C1873007C9BBE /* ActivitySum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BE4945235C1873007C9BBE /* ActivitySum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		378B97D5234D78A800740314 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		378B97D8234DFB8000740314 /* HealthKitAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitAuth.swift; sourceTree = "<group>"; };
 		378B97DA234E033E00740314 /* HealthSamples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthSamples.swift; sourceTree = "<group>"; };
+		37BE4945235C1873007C9BBE /* ActivitySum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 			children = (
 				378B97D8234DFB8000740314 /* HealthKitAuth.swift */,
 				378B97DA234E033E00740314 /* HealthSamples.swift */,
+				37BE4945235C1873007C9BBE /* ActivitySum.swift */,
 			);
 			path = healthInfo;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				370C80FF235018CF00EA198E /* SingleHealthInfo.swift in Sources */,
 				3721DEC4234C357C004688DD /* LogRow.swift in Sources */,
 				370C80F9234EBFC100EA198E /* DateExtensions.swift in Sources */,
+				37BE4946235C1873007C9BBE /* ActivitySum.swift in Sources */,
 				3744BD5023540A7F0040CEBA /* FirstScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
