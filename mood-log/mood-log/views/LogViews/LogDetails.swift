@@ -40,30 +40,6 @@ struct LogDetails: View {
                             Text(":D")
                             Text(":D")
                         }
-                        HStack{
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                        }
-                        HStack{
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                        }
                     }
                 }
                 Section(header: Text("Body")){
