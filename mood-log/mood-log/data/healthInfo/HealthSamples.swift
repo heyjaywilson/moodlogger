@@ -55,4 +55,29 @@ struct HKSamplesForDate{
         
         hkstore.execute(query)
     }
+    
+    func getActivity() {
+        let calendar = Calendar.current
+        let newday = calendar.startOfDay(for: self.date)
+        let startDate = calendar.dateComponents([.year, .month, .day], from: newday)
+        let endDate = calendar.dateComponents([.year, .month, .day], from: date)
+        
+        let predicate = HKQuery.predicate(forActivitySummariesBetweenStart: calendar.dateComponents([.year, .month, .day], from: newday), end: calendar.dateComponents([.year, .month, .day], from: date))
+        
+        let query = HKActivitySummaryQuery(predicate: predicate) { (query, summaries, error) -> Void in
+            guard let activitySummaries = summaries else {
+                guard let queryError = error else {
+                    fatalError("*** Did not return a valid error object. ***")
+                }
+                
+                print(queryError)
+                
+                return
+            }
+            
+            print(activitySummaries)
+        }
+        
+        hkstore.execute(query)
+    }
 }
