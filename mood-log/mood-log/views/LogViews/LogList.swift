@@ -20,8 +20,11 @@ struct LogList: View {
                     LogRow(mood: moods[0])
                 }.isDetailLink(true)
             }
-            .navigationBarTitle("Mood Log")
-            .animation(.linear(duration: 2.0))
+            .navigationBarTitle("Log")
+            .navigationBarItems(trailing: Button(action: { print("Add Log") }){
+                Text("Add Log")
+            })
+            .animation(.linear(duration: 0.5))
         }
     }
 }
