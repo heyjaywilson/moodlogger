@@ -49,7 +49,11 @@ struct HKSamplesForDate{
                     return
             }
             let res: Array<HKQuantitySample> = result as! Array<HKQuantitySample>
-            print(res[0].quantity.doubleValue(for: HKUnit(from: .pound)))
+            if res.count > 0 {
+                completion(0.0)
+                return
+            }
+            print(res)
             completion(res[0].quantity.doubleValue(for: HKUnit(from: .pound)))
         }
         
@@ -74,6 +78,7 @@ struct HKSamplesForDate{
             guard let summaries = summaries
                 else {
                     print(error as Any)
+                    completion(ActivitySum())
                     return
             }
             let sum = summaries[0]

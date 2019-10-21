@@ -37,13 +37,18 @@ struct LogRow: View {
             Spacer()
             ActivityChart(movePercent: actSum.percentEnergy, excePercent: 12.0, stanPercent: 100.0)
         }.onAppear{
-            self.healthSamples = HKSamplesForDate(date: self.mood.date)
-            self.healthSamples.getSteps { sum in
-                self.steps = sum
-            }
-            self.healthSamples.getActivity{ sum in
-                self.actSum = sum
-            }
+            self.getHealth()
+        }
+    }
+    
+    func getHealth(){
+        healthSamples = HKSamplesForDate(date: self.mood.date)
+        healthSamples.getSteps { sum in
+            self.steps = sum
+        }
+        healthSamples.getActivity{ sum in
+            self.actSum = sum
+            print(self.actSum.percentEnergy)
         }
     }
 }
