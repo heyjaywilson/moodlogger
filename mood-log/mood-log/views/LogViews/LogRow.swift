@@ -16,9 +16,7 @@ struct LogRow: View {
     var body: some View {
         HStack(alignment: .center){
             VStack{
-                Text(mood.date.returnMonthAsString())
-                    .fontWeight(.black)
-                Text(mood.date.returnDayAsString())
+                Text(mood.stringDate)
             }
             VStack(alignment: .center){
                 Text("MOODS GO HERE")
@@ -54,6 +52,6 @@ struct LogRow: View {
 
 struct LogRow_Previews: PreviewProvider {
     static var previews: some View {
-        LogRow(mood: Mood(mood: "😴", uuid: UUID(), date: Date()))
+        LogRow(mood: Mood(mood: "😴", id: UUID(), date: Date()))
     }
 }

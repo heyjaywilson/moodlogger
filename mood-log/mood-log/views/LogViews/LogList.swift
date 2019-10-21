@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct LogList: View {
-    var moods: [Mood] = [Mood(mood: "😴", uuid: UUID(), date: Date())]
+    var moods: [Mood] = [Mood(mood: "😄", id: UUID(), date: Date())]
     var body: some View {
         NavigationView {
             List{

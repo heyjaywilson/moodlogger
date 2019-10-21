@@ -25,8 +25,8 @@ struct BarForCharts: View {
     }
     
     func getHeight() -> CGFloat{
-        if barAmt > 100.0 {
-            return CGFloat(exactly: 100)!
+        if barAmt > 50.0 {
+            return CGFloat(exactly: 50)!
         } else {
             return CGFloat(exactly: barAmt)!
         }

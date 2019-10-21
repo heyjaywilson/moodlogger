@@ -10,7 +10,7 @@ import Foundation
 
 struct Mood {
     let mood: String
-    let uuid: UUID
+    let id: UUID
     let date: Date
     private let dateFormatter = DateFormatter()
     
