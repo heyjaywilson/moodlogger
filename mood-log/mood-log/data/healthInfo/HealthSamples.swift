@@ -49,11 +49,10 @@ struct HKSamplesForDate{
                     return
             }
             let res: Array<HKQuantitySample> = result as! Array<HKQuantitySample>
-            if res.count > 0 {
+            if res.count == 0 {
                 completion(0.0)
                 return
             }
-            print(res)
             completion(res[0].quantity.doubleValue(for: HKUnit(from: .pound)))
         }
         
