@@ -20,7 +20,7 @@ struct AddMood: View {
 }
 
 struct LogDetails: View {
-    var date: Date
+    var log: LogEntity
     @State private var steps: Int = 0
     @State private var weight: Double = 120.0
     @State private var actSum: ActivitySum = ActivitySum()
@@ -70,7 +70,7 @@ struct LogDetails: View {
             }
             .listStyle(GroupedListStyle())
         }
-        .navigationBarTitle(Text("\(date.returnLongMonth()) \(date.returnDayAsString())"), displayMode: .large)
+        .navigationBarTitle(Text("\(log.date!.returnLongMonth()) \(log.date!.returnDayAsString())"), displayMode: .large)
         .navigationBarItems(trailing: AddMood())
         .onAppear{
             self.getHealthInfo()
@@ -78,7 +78,7 @@ struct LogDetails: View {
     }
     
     func getHealthInfo(){
-        let healthSamples = HKSamplesForDate(date: date)
+        let healthSamples = HKSamplesForDate(date: log.date!)
         healthSamples.getSteps { sum in
             self.steps = Int(sum.rounded())
         }
@@ -87,14 +87,6 @@ struct LogDetails: View {
         }
         healthSamples.getActivity{ sum in
             self.actSum = sum
-        }
-    }
-}
-
-struct LogDetails_Previews: PreviewProvider {
-    static var previews: some View {
-        NavigationView{
-            LogDetails(date: Date())
         }
     }
 }

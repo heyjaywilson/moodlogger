@@ -9,7 +9,7 @@
 import Foundation
 import CoreData
 
-extension LogEntity {
+extension LogEntity: Identifiable {
     static func allLogs() -> NSFetchRequest<LogEntity> {
         let request: NSFetchRequest<LogEntity> = LogEntity.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]

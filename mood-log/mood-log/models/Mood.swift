@@ -15,7 +15,7 @@ struct Mood {
     private let dateFormatter = DateFormatter()
     
     func returnMonth() -> String {
-        dateFormatter.dateFormat = "MMMM"
+        dateFormatter.dateFormat = "MM"
         return dateFormatter.string(from: date)
     }
     

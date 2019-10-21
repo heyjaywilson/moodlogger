@@ -9,17 +9,20 @@
 import SwiftUI
 
 struct LogRow: View {
-    var mood: Mood
+    var log: LogEntity
+    
+    private let dateFormatter = DateFormatter()
+    
     @State private var healthSamples: HKSamplesForDate = HKSamplesForDate(date: Date())
     @State private var steps: Double = 0.0
     @State private var actSum: ActivitySum = ActivitySum()
     var body: some View {
         HStack(alignment: .center){
             VStack{
-                Text(mood.returnMonth())
+                Text(returnMonth())
                     .fontWeight(.heavy)
-                Text(mood.returnDay())
-            }
+                Text(returnDay())
+            }.padding(.trailing)
             VStack(alignment: .center){
                 Text("MOODS GO HERE")
                 Spacer()
@@ -42,7 +45,7 @@ struct LogRow: View {
     }
     
     func getHealth(){
-        healthSamples = HKSamplesForDate(date: self.mood.date)
+        healthSamples = HKSamplesForDate(date: log.date!)
         healthSamples.getSteps { sum in
             self.steps = sum
         }
@@ -50,10 +53,13 @@ struct LogRow: View {
             self.actSum = sum
         }
     }
-}
-
-struct LogRow_Previews: PreviewProvider {
-    static var previews: some View {
-        LogRow(mood: Mood(mood: "😴", id: UUID(), date: Date()))
+    
+    func returnMonth() -> String{
+        dateFormatter.dateFormat = "MMM"
+        return dateFormatter.string(from: log.date!)
+    }
+    func returnDay() -> String{
+        dateFormatter.dateFormat = "dd"
+        return dateFormatter.string(from: log.date!)
     }
 }

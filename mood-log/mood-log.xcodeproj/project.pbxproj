@@ -22,6 +22,7 @@
 		3721DEC9234C3E2A004688DD /* LogDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEC8234C3E2A004688DD /* LogDetails.swift */; };
 		3744BD5023540A7F0040CEBA /* FirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3744BD4F23540A7F0040CEBA /* FirstScreen.swift */; };
 		37464902234CB05200F20B67 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37464901234CB05200F20B67 /* Mood.swift */; };
+		377E1F02235E4EB5008A6733 /* NewLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E1F01235E4EB5008A6733 /* NewLog.swift */; };
 		378B97D0234D60B300740314 /* BarForCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B97CF234D60B300740314 /* BarForCharts.swift */; };
 		378B97D6234D78A800740314 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378B97D5234D78A800740314 /* HealthKit.framework */; };
 		378B97D9234DFB8000740314 /* HealthKitAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B97D8234DFB8000740314 /* HealthKitAuth.swift */; };
@@ -48,6 +49,7 @@
 		3721DEC8234C3E2A004688DD /* LogDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetails.swift; sourceTree = "<group>"; };
 		3744BD4F23540A7F0040CEBA /* FirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreen.swift; sourceTree = "<group>"; };
 		37464901234CB05200F20B67 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		377E1F01235E4EB5008A6733 /* NewLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLog.swift; sourceTree = "<group>"; };
 		378B97CF234D60B300740314 /* BarForCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarForCharts.swift; sourceTree = "<group>"; };
 		378B97D3234D78A700740314 /* mood-log.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "mood-log.entitlements"; sourceTree = "<group>"; };
 		378B97D5234D78A800740314 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
@@ -155,6 +157,7 @@
 				3721DEC1234C34F4004688DD /* LogList.swift */,
 				3721DEC3234C357C004688DD /* LogRow.swift */,
 				3721DEC8234C3E2A004688DD /* LogDetails.swift */,
+				377E1F01235E4EB5008A6733 /* NewLog.swift */,
 			);
 			path = LogViews;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				378B97D0234D60B300740314 /* BarForCharts.swift in Sources */,
 				3721DEC9234C3E2A004688DD /* LogDetails.swift in Sources */,
 				3721DEA8234C348E004688DD /* AppDelegate.swift in Sources */,
+				377E1F02235E4EB5008A6733 /* NewLog.swift in Sources */,
 				3721DEAA234C348E004688DD /* SceneDelegate.swift in Sources */,
 				3721DEC2234C34F4004688DD /* LogList.swift in Sources */,
 				3721DEAF234C348E004688DD /* ContentView.swift in Sources */,

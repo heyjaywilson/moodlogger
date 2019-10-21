@@ -9,18 +9,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.managedObjectContext) var context
     @State private var selection = 0
- 
+    
     var body: some View {
         TabView(selection: $selection){
             LogList()
+                .environment(\.managedObjectContext, context)
                 .tabItem {
                     VStack {
                         Image("first")
                         Text("First")
                     }
-                }
-                .tag(0)
+            }
+            .tag(0)
             Text("Second View")
                 .font(.title)
                 .tabItem {
@@ -28,8 +30,8 @@ struct ContentView: View {
                         Image("second")
                         Text("Second")
                     }
-                }
-                .tag(1)
+            }
+            .tag(1)
         }
     }
 }

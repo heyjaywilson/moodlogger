@@ -9,21 +9,32 @@
 import SwiftUI
 
 struct LogList: View {
-    var moods: [Mood] = [Mood(mood: "😄", id: UUID(), date: Date())]
+    @Environment(\.managedObjectContext) var context
+    @FetchRequest(
+        entity: LogEntity.entity(),
+        sortDescriptors: [NSSortDescriptor(key: "date", ascending: false)]
+    ) var logs: FetchedResults<LogEntity>
+    @State private var showNewLogForm: Bool = false
+    
     var body: some View {
         NavigationView {
             List{
-                NavigationLink(destination: LogDetails(date: Date())) {
-                    LogRow(mood: moods[0])
-                }.isDetailLink(true)
-                NavigationLink(destination: LogDetails(date: Date())) {
-                    LogRow(mood: moods[0])
-                }.isDetailLink(true)
+                ForEach(logs){ log in
+                    NavigationLink(destination: LogDetails(log: log)) {
+                        LogRow(log: log)
+                    }
+                }
             }
             .navigationBarTitle("Log")
-            .navigationBarItems(trailing: Button(action: { print("Add Log") }){
+            .navigationBarItems(trailing: Button(action: {
+                print("Add Log")
+                self.showNewLogForm = true
+            }){
                 Text("Add Log")
+            }.sheet(isPresented: $showNewLogForm, content: {
+                NewLog().environment(\.managedObjectContext, self.context)
             })
+            )
             .animation(.linear(duration: 0.5))
         }
     }
