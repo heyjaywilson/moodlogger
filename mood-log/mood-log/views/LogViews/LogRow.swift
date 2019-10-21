@@ -35,7 +35,7 @@ struct LogRow: View {
                 }
             }.padding(.vertical)
             Spacer()
-            ActivityChart(movePercent: actSum.percentEnergy, excePercent: 12.0, stanPercent: 100.0)
+            ActivityChart(movePercent: actSum.percentEnergy, excePercent: actSum.percentExercise, stanPercent: actSum.percentStand)
         }.onAppear{
             self.getHealth()
         }
@@ -48,7 +48,6 @@ struct LogRow: View {
         }
         healthSamples.getActivity{ sum in
             self.actSum = sum
-            print(self.actSum.percentEnergy)
         }
     }
 }

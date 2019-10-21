@@ -55,16 +55,16 @@ struct LogDetails: View {
                     HStack(alignment: .center){
                         Text("Summary")
                         Spacer()
-                        ActivityChart(movePercent: movePercent, excePercent: excerPercent, stanPercent: standPercent)
+                        ActivityChart(movePercent: actSum.percentEnergy, excePercent: actSum.percentExercise, stanPercent: actSum.percentStand)
                     }
                     SingleHealthInfo(label: "Active Energy", amt: "\(actSum.energy.string(fractionDigits: 2)) cals")
                         .foregroundColor(.red)
                     SingleHealthInfo(label: "Steps", amt: "\(steps)")
                     SingleHealthInfo(label: "Walk & Run Distance", amt:"\(1290)")
-                    SingleHealthInfo(label: "Exercise Minutes", amt: "23")
+                    SingleHealthInfo(label: "Exercise Minutes", amt: "\(actSum.exercise.string(fractionDigits: 2))")
                         .foregroundColor(.yellow)
                     SingleHealthInfo(label: "Workouts", amt: "3")
-                    SingleHealthInfo(label: "Stand Minutes", amt: "40")
+                    SingleHealthInfo(label: "Stand Hours", amt: "\(actSum.stand.string(fractionDigits: 0))")
                         .foregroundColor(.blue)
                 }
             }
@@ -87,9 +87,6 @@ struct LogDetails: View {
         }
         healthSamples.getActivity{ sum in
             self.actSum = sum
-            self.movePercent = sum.percentEnergy
-            self.excerPercent = sum.percentExercise
-            self.standPercent = sum.percentStand
         }
     }
 }

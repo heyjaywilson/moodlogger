@@ -17,12 +17,24 @@ struct ActivitySum {
     var standHours: HKQuantity?
     var goalStand: HKQuantity?
     
+    // MARK: Amounts
     var energy: Double {
         get {
             return energyBurned?.doubleValue(for: HKUnit(from: .kilocalorie)) ?? 0.0
         }
     }
+    var exercise: Double {
+        get {
+            return exerciseTime?.doubleValue(for: HKUnit.minute()) ?? 0.0
+        }
+    }
+    var stand: Double {
+        get {
+            return standHours?.doubleValue(for: HKUnit.count()) ?? 0.0
+        }
+    }
     
+    // MARK: Percentages
     var percentEnergy: Double {
         get {
             let ans = ((energyBurned?.doubleValue(for: HKUnit(from: .kilocalorie)) ?? 1.0)/(goalEnergy?.doubleValue(for: HKUnit(from: .kilocalorie)) ?? 1.0)) * 100
@@ -33,7 +45,6 @@ struct ActivitySum {
             }
         }
     }
-    
     var percentExercise: Double{
         get {
             let amt = exerciseTime?.doubleValue(for: HKUnit.minute()) ?? 1.0
@@ -50,8 +61,7 @@ struct ActivitySum {
     }
     var percentStand: Double {
         get {
-            let ans = standHours?.doubleValue(for: HKUnit.count()) ?? 1.0 / (goalStand?.doubleValue(for: HKUnit.count()) ?? 1.0) * 100
-            
+            let ans = (standHours?.doubleValue(for: HKUnit.count()) ?? 1.0 / (goalStand?.doubleValue(for: HKUnit.count()) ?? 1.0)) * 10
             if ans > 100.0 {
                 return 100.0
             } else {
