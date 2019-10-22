@@ -15,4 +15,10 @@ extension LogEntity: Identifiable {
         request.sortDescriptors = [NSSortDescriptor(key: "date", ascending: false)]
         return request
     }
+    
+    static func logsForDate(date: String) -> NSFetchRequest<LogEntity> {
+        let request: NSFetchRequest<LogEntity> = LogEntity.fetchRequest()
+        request.predicate = NSPredicate(format: "stringDate == %@", date)
+        return request
+    }
 }

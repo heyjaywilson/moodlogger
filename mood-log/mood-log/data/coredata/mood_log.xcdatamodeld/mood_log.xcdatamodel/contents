@@ -3,6 +3,7 @@
     <entity name="LogEntity" representedClassName="LogEntity" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="stringDate" optional="YES" attributeType="String"/>
         <relationship name="moods" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MoodEntity" inverseName="log" inverseEntity="MoodEntity"/>
     </entity>
     <entity name="MoodEntity" representedClassName="MoodEntity" syncable="YES" codeGenerationType="class">
@@ -12,7 +13,7 @@
         <relationship name="log" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="LogEntity" inverseName="moods" inverseEntity="LogEntity"/>
     </entity>
     <elements>
+        <element name="LogEntity" positionX="-54" positionY="18" width="128" height="103"/>
         <element name="MoodEntity" positionX="-63" positionY="-18" width="128" height="103"/>
-        <element name="LogEntity" positionX="-54" positionY="18" width="128" height="88"/>
     </elements>
 </model>

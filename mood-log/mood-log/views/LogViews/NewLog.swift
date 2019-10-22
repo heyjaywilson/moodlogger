@@ -51,19 +51,34 @@ struct NewLog: View {
     }
     
     func saveLog() {
-        let newLog: LogEntity = LogEntity(context: context)
-        newLog.date = logDate
-        newLog.id = UUID()
+        var log: LogEntity = LogEntity(context: context)
+        var results: [LogEntity] = []
+        let request = LogEntity.logsForDate(date: logDate.returnDateAsString())
+
+        do {
+            results = try self.context.fetch(request)
+        } catch{
+            log.date = logDate
+            log.stringDate = logDate.returnDateAsString()
+            log.id = UUID()
+            print("no matches")
+        }
+        
+        if results.count > 0 {
+            log = results[0]
+        } else {
+            log.date = logDate
+            log.stringDate = logDate.returnDateAsString()
+            log.id = UUID()
+        }
 
         let newMood: MoodEntity = MoodEntity(context: context)
         newMood.date = logDate
         newMood.id = UUID()
         newMood.mood = moods[chosenMood]
-        newMood.log = newLog
+        newMood.log = log
         
-        print(newLog)
         do {
-            print(newLog)
             try context.save()
         } catch {
             print(error)
