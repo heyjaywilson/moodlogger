@@ -10,11 +10,14 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) var context
+    @EnvironmentObject var logman: LogManager
+    
     @State private var selection = 0
     
     var body: some View {
         TabView(selection: $selection){
             LogList()
+                .environmentObject(logman)
                 .environment(\.managedObjectContext, context)
                 .tabItem {
                     VStack {
@@ -33,11 +36,5 @@ struct ContentView: View {
             }
             .tag(1)
         }
-    }
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }

@@ -23,6 +23,7 @@
 		3721DEC9234C3E2A004688DD /* LogDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEC8234C3E2A004688DD /* LogDetails.swift */; };
 		3744BD5023540A7F0040CEBA /* FirstScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3744BD4F23540A7F0040CEBA /* FirstScreen.swift */; };
 		37464902234CB05200F20B67 /* Mood.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37464901234CB05200F20B67 /* Mood.swift */; };
+		37498356235FFA6E005D01A0 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37498355235FFA6E005D01A0 /* LogManager.swift */; };
 		377E1F02235E4EB5008A6733 /* NewLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377E1F01235E4EB5008A6733 /* NewLog.swift */; };
 		378B97D0234D60B300740314 /* BarForCharts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378B97CF234D60B300740314 /* BarForCharts.swift */; };
 		378B97D6234D78A800740314 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 378B97D5234D78A800740314 /* HealthKit.framework */; };
@@ -51,6 +52,7 @@
 		3721DEC8234C3E2A004688DD /* LogDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogDetails.swift; sourceTree = "<group>"; };
 		3744BD4F23540A7F0040CEBA /* FirstScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreen.swift; sourceTree = "<group>"; };
 		37464901234CB05200F20B67 /* Mood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mood.swift; sourceTree = "<group>"; };
+		37498355235FFA6E005D01A0 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		377E1F01235E4EB5008A6733 /* NewLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLog.swift; sourceTree = "<group>"; };
 		378B97CF234D60B300740314 /* BarForCharts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarForCharts.swift; sourceTree = "<group>"; };
 		378B97D3234D78A700740314 /* mood-log.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "mood-log.entitlements"; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 			children = (
 				378B97D7234DFB5E00740314 /* healthInfo */,
 				378B97D2234D788B00740314 /* coredata */,
+				37498355235FFA6E005D01A0 /* LogManager.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				370C80FF235018CF00EA198E /* SingleHealthInfo.swift in Sources */,
 				37104BA4235E7F5A003DB318 /* MoodPicker.swift in Sources */,
 				3721DEC4234C357C004688DD /* LogRow.swift in Sources */,
+				37498356235FFA6E005D01A0 /* LogManager.swift in Sources */,
 				370C80F9234EBFC100EA198E /* DateExtensions.swift in Sources */,
 				37BE4946235C1873007C9BBE /* ActivitySum.swift in Sources */,
 				3744BD5023540A7F0040CEBA /* FirstScreen.swift in Sources */,

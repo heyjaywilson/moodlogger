@@ -10,6 +10,7 @@ import SwiftUI
 
 struct LogList: View {
     @Environment(\.managedObjectContext) var context
+    @EnvironmentObject var logman: LogManager
     @FetchRequest(
         entity: LogEntity.entity(),
         sortDescriptors: [NSSortDescriptor(key: "date", ascending: false)]
@@ -19,7 +20,7 @@ struct LogList: View {
     var body: some View {
         NavigationView {
             List{
-                ForEach(logs){ log in
+                ForEach(logman.allLogs){ log in
                     NavigationLink(destination: LogDetails(log: log)) {
                         LogRow(log: log)
                     }
@@ -27,12 +28,11 @@ struct LogList: View {
             }
             .navigationBarTitle("Log")
             .navigationBarItems(trailing: Button(action: {
-                print("Add Log")
                 self.showNewLogForm = true
             }){
                 Text("Add Log")
             }.sheet(isPresented: $showNewLogForm, content: {
-                NewLog().environment(\.managedObjectContext, self.context)
+                NewLog().environmentObject(self.logman)
             })
             )
             .animation(.linear(duration: 0.5))

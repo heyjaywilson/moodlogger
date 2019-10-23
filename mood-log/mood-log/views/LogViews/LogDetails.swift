@@ -21,6 +21,7 @@ struct AddMood: View {
 
 struct LogDetails: View {
     var log: LogEntity
+    @State private var moods: String = ""
     @State private var steps: Int = 0
     @State private var weight: Double = 120.0
     @State private var actSum: ActivitySum = ActivitySum()
@@ -31,20 +32,7 @@ struct LogDetails: View {
         VStack{
             List{
                 Section(header: Text("Mood")){
-                    VStack{
-                        HStack{
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                            Text(":D")
-                        }
-                    }
+                    Text(moods)
                 }
                 Section(header: Text("Body")){
                     SingleHealthInfo(label: "Body Mass Index", amt: "34.44 BMI")
@@ -70,10 +58,11 @@ struct LogDetails: View {
             }
             .listStyle(GroupedListStyle())
         }
-        .navigationBarTitle(Text("\(log.date!.returnLongMonth()) \(log.date!.returnDayAsString())"), displayMode: .large)
+        .navigationBarTitle(Text(log.date!.returnDateAsString()), displayMode: .large)
         .navigationBarItems(trailing: AddMood())
         .onAppear{
             self.getHealthInfo()
+            self.getMoods()
         }
     }
     
@@ -87,6 +76,17 @@ struct LogDetails: View {
         }
         healthSamples.getActivity{ sum in
             self.actSum = sum
+        }
+    }
+    func getMoods(){
+        moods = ""
+        let temp = Array<Any>(log.moods ?? [])
+        var allMoods: [MoodEntity] = temp as! [MoodEntity]
+        
+        allMoods.sort{ $0.date! < $1.date! }
+        
+        for mood in allMoods {
+            moods = moods + (mood.mood ?? "")
         }
     }
 }

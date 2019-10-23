@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct NewLog: View {
-    @Environment(\.managedObjectContext) var context
     @Environment(\.presentationMode) var presentationMode
+    @EnvironmentObject var logman: LogManager
     
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -51,39 +51,7 @@ struct NewLog: View {
     }
     
     func saveLog() {
-        var log: LogEntity = LogEntity(context: context)
-        var results: [LogEntity] = []
-        let request = LogEntity.logsForDate(date: logDate.returnDateAsString())
-
-        do {
-            results = try self.context.fetch(request)
-        } catch{
-            log.date = logDate
-            log.stringDate = logDate.returnDateAsString()
-            log.id = UUID()
-            print("no matches")
-        }
-        
-        if results.count > 0 {
-            log = results[0]
-        } else {
-            log.date = logDate
-            log.stringDate = logDate.returnDateAsString()
-            log.id = UUID()
-        }
-
-        let newMood: MoodEntity = MoodEntity(context: context)
-        newMood.date = logDate
-        newMood.id = UUID()
-        newMood.mood = moods[chosenMood]
-        newMood.log = log
-        
-        do {
-            try context.save()
-        } catch {
-            print(error)
-        }
-        
+        logman.addLog(date: logDate, mood: moods[chosenMood])
         presentationMode.wrappedValue.dismiss()
     }
 }

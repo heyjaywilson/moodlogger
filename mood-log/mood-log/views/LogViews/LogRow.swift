@@ -16,6 +16,7 @@ struct LogRow: View {
     @State private var healthSamples: HKSamplesForDate = HKSamplesForDate(date: Date())
     @State private var steps: Double = 0.0
     @State private var actSum: ActivitySum = ActivitySum()
+    @State private var moods: String = ""
     var body: some View {
         HStack(alignment: .center){
             VStack{
@@ -23,9 +24,9 @@ struct LogRow: View {
                     .fontWeight(.heavy)
                 Text(returnDay())
             }.padding(.trailing)
-            VStack(alignment: .center){
-                Text("MOODS GO HERE")
-                Spacer()
+            VStack(alignment: .leading){
+                Text(moods)
+                Divider()
                 HStack(alignment: .center, spacing: 20) {
                     VStack {
                         Text("😴")
@@ -41,6 +42,7 @@ struct LogRow: View {
             ActivityChart(movePercent: actSum.percentEnergy, excePercent: actSum.percentExercise, stanPercent: actSum.percentStand)
         }.onAppear{
             self.getHealth()
+            self.getMoods()
         }
     }
     
@@ -51,6 +53,17 @@ struct LogRow: View {
         }
         healthSamples.getActivity{ sum in
             self.actSum = sum
+        }
+    }
+    func getMoods(){
+        moods = ""
+        let temp = Array<Any>(log.moods ?? [])
+        var allMoods: [MoodEntity] = temp as! [MoodEntity]
+        
+        allMoods.sort{ $0.date! < $1.date! }
+        
+        for mood in allMoods {
+            moods = moods + (mood.mood ?? "")
         }
     }
     
