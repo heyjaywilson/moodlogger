@@ -10,12 +10,12 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        Text("Settings")
-    }
-}
-
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
+        NavigationView {
+            List {
+                Text("Health Information")
+                Text("About")
+                Text("App Website (🔗 to website)")
+            }
+        }
     }
 }
