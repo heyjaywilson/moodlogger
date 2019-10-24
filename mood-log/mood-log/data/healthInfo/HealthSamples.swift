@@ -13,13 +13,23 @@ struct HKSamplesForDate{
     private let hkstore = HKHealthStore()
     private let hkAuth = HealthKitAuth()
     let date: Date
+    var newday: Date {
+        get {
+            let calendar = Calendar.current
+            let startday = calendar.startOfDay(for: self.date)
+            return startday
+        }
+    }
+    var endDate: Date {
+        get {
+            let endDate = newday.addingTimeInterval(23.99 * 60 * 60)
+            return endDate
+        }
+    }
     
     func getSteps(completion: @escaping(Double) -> Void) {
         let stepCount = HKObjectType.quantityType(forIdentifier: .stepCount)!
-        let calendar = Calendar.current
-        let newday = calendar.startOfDay(for: self.date)
-        
-        let predicate = HKQuery.predicateForSamples(withStart: newday, end: date, options: .strictStartDate)
+        let predicate = HKQuery.predicateForSamples(withStart: newday, end: endDate, options: .strictStartDate)
         var interval = DateComponents()
         interval.day = 1
         
@@ -36,10 +46,7 @@ struct HKSamplesForDate{
     
     func getWeight(completion: @escaping(Double) -> Void) {
         let bodymass = HKObjectType.quantityType(forIdentifier: .bodyMass)!
-        
-        let calendar = Calendar.current
-        let newday = calendar.startOfDay(for: self.date)
-        let predicate  = HKQuery.predicateForSamples(withStart: newday, end: date, options: .strictEndDate)
+        let predicate  = HKQuery.predicateForSamples(withStart: newday, end: endDate, options: .strictEndDate)
         let limit = 1
         
         let query = HKSampleQuery.init(sampleType: bodymass, predicate: predicate, limit: limit, sortDescriptors: nil) { (query, result, error) in
@@ -61,14 +68,13 @@ struct HKSamplesForDate{
     
     func getActivity(completion: @escaping(ActivitySum) -> Void){
         let calendar = Calendar.current
-        let beginDay = calendar.startOfDay(for: self.date)
         var begin = calendar.dateComponents(
             [ .year, .month, .day ],
-            from: beginDay
+            from: newday
         )
         begin.calendar = calendar
         
-        var end = calendar.dateComponents([ .year, .month, .day ], from: date)
+        var end = calendar.dateComponents([ .year, .month, .day ], from: endDate)
         end.calendar = calendar
         
         let predicate = HKQuery.predicate(forActivitySummariesBetweenStart: begin, end: end)
