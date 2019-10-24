@@ -21,17 +21,14 @@ struct ContentView: View {
                 .environment(\.managedObjectContext, context)
                 .tabItem {
                     VStack {
-                        Image("first")
-                        Text("First")
+                        Image(systemName: "list.dash")
                     }
             }
             .tag(0)
-            Text("Second View")
-                .font(.title)
+            SettingsView()
                 .tabItem {
                     VStack {
-                        Image("second")
-                        Text("Second")
+                        Image(systemName: "gear")
                     }
             }
             .tag(1)
