@@ -12,10 +12,16 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             List {
-                Text("Health Information")
+                NavigationLink(destination: Text("Information Displayed in Log Row")) {
+                    Text("Information Displayed in Log Row")
+                }
+                NavigationLink(destination: Text("Information Displayed in Log Details ")) {
+                    Text("Information Displayed in Log Details ")
+                }
                 Text("About")
                 Text("App Website (🔗 to website)")
             }
+        .navigationBarTitle(Text("Settings"))
         }
     }
 }
