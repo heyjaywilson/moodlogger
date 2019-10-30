@@ -86,6 +86,10 @@ struct HKSamplesForDate{
                     completion(ActivitySum())
                     return
             }
+            if summaries.count == 0 {
+                completion(ActivitySum())
+                return
+            }
             let sum = summaries[0]
             let activity: ActivitySum = ActivitySum(
                 energyBurned: sum.activeEnergyBurned,
@@ -95,6 +99,7 @@ struct HKSamplesForDate{
                 standHours: sum.appleStandHours,
                 goalStand: sum.appleStandHoursGoal)
             completion(activity)
+            return
         }
         
         hkstore.execute(query)

@@ -25,9 +25,6 @@ struct LogDetails: View {
     @State private var steps: Int = 0
     @State private var weight: Double = 120.0
     @State private var actSum: ActivitySum = ActivitySum()
-    @State private var movePercent: Double = 0.0
-    @State private var excerPercent: Double = 0.0
-    @State private var standPercent: Double = 0.0
     var body: some View {
         VStack{
             List{
