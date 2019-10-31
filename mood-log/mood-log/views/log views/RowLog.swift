@@ -10,7 +10,9 @@ import SwiftUI
 
 struct RowLog: View {
     var body: some View {
-        Text("Hello World!")
+        HStack{
+            Text("Date")
+        }
     }
 }
 
