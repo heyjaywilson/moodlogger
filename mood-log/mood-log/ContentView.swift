@@ -25,13 +25,6 @@ struct ContentView: View {
                     }
             }
             .tag(0)
-            SettingsView()
-                .tabItem {
-                    VStack {
-                        Image(systemName: "gear")
-                    }
-            }
-            .tag(1)
         }
     }
 }
