@@ -11,7 +11,19 @@ import SwiftUI
 struct RowLog: View {
     var body: some View {
         HStack{
-            Text("Date")
+            DateRow()
+            VStack{
+                Text("Moods")
+                HStack{
+                    SlotTwo()
+                    SlotThree()
+                }
+                HStack{
+                    SlotFour()
+                    SlotFive()
+                }
+            }
+            SlotOne()
         }
     }
 }

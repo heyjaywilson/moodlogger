@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		370C80F9234EBFC100EA198E /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370C80F8234EBFC100EA198E /* DateExtensions.swift */; };
+		37175C2F236C515A003B34BB /* SlotOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37175C2E236C515A003B34BB /* SlotOne.swift */; };
+		37175C31236C5177003B34BB /* SlotTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37175C30236C5177003B34BB /* SlotTwo.swift */; };
+		37175C33236C5186003B34BB /* SlotThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37175C32236C5186003B34BB /* SlotThree.swift */; };
+		37175C35236C5196003B34BB /* SlotFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37175C34236C5196003B34BB /* SlotFour.swift */; };
+		37175C37236C51AA003B34BB /* SlotFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37175C36236C51AA003B34BB /* SlotFive.swift */; };
+		37175C39236C51CF003B34BB /* DateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37175C38236C51CF003B34BB /* DateRow.swift */; };
 		3721DEA8234C348E004688DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEA7234C348E004688DD /* AppDelegate.swift */; };
 		3721DEAA234C348E004688DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEA9234C348E004688DD /* SceneDelegate.swift */; };
 		3721DEAD234C348E004688DD /* mood_log.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEAB234C348E004688DD /* mood_log.xcdatamodeld */; };
@@ -27,6 +33,12 @@
 
 /* Begin PBXFileReference section */
 		370C80F8234EBFC100EA198E /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		37175C2E236C515A003B34BB /* SlotOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotOne.swift; sourceTree = "<group>"; };
+		37175C30236C5177003B34BB /* SlotTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotTwo.swift; sourceTree = "<group>"; };
+		37175C32236C5186003B34BB /* SlotThree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotThree.swift; sourceTree = "<group>"; };
+		37175C34236C5196003B34BB /* SlotFour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotFour.swift; sourceTree = "<group>"; };
+		37175C36236C51AA003B34BB /* SlotFive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlotFive.swift; sourceTree = "<group>"; };
+		37175C38236C51CF003B34BB /* DateRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRow.swift; sourceTree = "<group>"; };
 		3721DEA4234C348E004688DD /* mood-log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mood-log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3721DEA7234C348E004688DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3721DEA9234C348E004688DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +77,19 @@
 				370C80F8234EBFC100EA198E /* DateExtensions.swift */,
 			);
 			path = helpers;
+			sourceTree = "<group>";
+		};
+		37175C2D236C513A003B34BB /* row views */ = {
+			isa = PBXGroup;
+			children = (
+				37175C30236C5177003B34BB /* SlotTwo.swift */,
+				37175C2E236C515A003B34BB /* SlotOne.swift */,
+				37175C32236C5186003B34BB /* SlotThree.swift */,
+				37175C34236C5196003B34BB /* SlotFour.swift */,
+				37175C36236C51AA003B34BB /* SlotFive.swift */,
+				37175C38236C51CF003B34BB /* DateRow.swift */,
+			);
+			path = "row views";
 			sourceTree = "<group>";
 		};
 		3721DE9B234C348E004688DD = {
@@ -121,6 +146,7 @@
 		376DFF6A236A863F007C2EC2 /* log views */ = {
 			isa = PBXGroup;
 			children = (
+				37175C2D236C513A003B34BB /* row views */,
 				376DFF6B236A865B007C2EC2 /* LogList.swift */,
 				376DFF6D236A86AC007C2EC2 /* RowLog.swift */,
 			);
@@ -241,12 +267,18 @@
 				3721DEAF234C348E004688DD /* ContentView.swift in Sources */,
 				3721DEAD234C348E004688DD /* mood_log.xcdatamodeld in Sources */,
 				376DFF6E236A86AC007C2EC2 /* RowLog.swift in Sources */,
+				37175C31236C5177003B34BB /* SlotTwo.swift in Sources */,
+				37175C35236C5196003B34BB /* SlotFour.swift in Sources */,
 				378B97DB234E033E00740314 /* HealthSamples.swift in Sources */,
 				378B97D9234DFB8000740314 /* HealthKitAuth.swift in Sources */,
 				37FC811F235DD67B00CF56BC /* LogEntity+Extension.swift in Sources */,
 				37498356235FFA6E005D01A0 /* LogManager.swift in Sources */,
+				37175C2F236C515A003B34BB /* SlotOne.swift in Sources */,
 				370C80F9234EBFC100EA198E /* DateExtensions.swift in Sources */,
+				37175C39236C51CF003B34BB /* DateRow.swift in Sources */,
 				37BE4946235C1873007C9BBE /* ActivitySum.swift in Sources */,
+				37175C37236C51AA003B34BB /* SlotFive.swift in Sources */,
+				37175C33236C5186003B34BB /* SlotThree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
