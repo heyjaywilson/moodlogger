@@ -9,9 +9,24 @@
 import SwiftUI
 
 struct LogList: View {
+    @Environment(\.managedObjectContext) var context
+    @EnvironmentObject var logman: LogManager
+    @State private var showNewLogForm: Bool = false
+    
     var body: some View {
-        List {
-            RowLog()
+        NavigationView{
+            List {
+                RowLog()
+            }
+            .navigationBarTitle("Logs")
+            .navigationBarItems(trailing: Button(action: {
+                self.showNewLogForm = true
+            }){
+                Text("Add Log")
+            }.sheet(isPresented: $showNewLogForm, content: {
+                LogNew().environmentObject(self.logman)
+            })
+            )
         }
     }
 }
