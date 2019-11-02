@@ -9,11 +9,13 @@
 import SwiftUI
 
 struct DateRow: View {
+    var month: String
+    var day: String
     var body: some View {
         VStack{
-            Text("Nov")
+            Text(month)
                 .font(.headline)
-            Text("1")
+            Text(day)
         }
         .frame(width: 60, alignment: .center)
     }
@@ -21,6 +23,6 @@ struct DateRow: View {
 
 struct DateRow_Previews: PreviewProvider {
     static var previews: some View {
-        DateRow()
+        DateRow(month: "Dec", day: "12")
     }
 }

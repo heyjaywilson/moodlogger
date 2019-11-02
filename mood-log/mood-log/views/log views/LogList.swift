@@ -16,7 +16,9 @@ struct LogList: View {
     var body: some View {
         NavigationView{
             List {
-                RowLog()
+                ForEach(logman.allLogs) { log in
+                    RowLog(log: log)
+                }
             }
             .navigationBarTitle("Logs")
             .navigationBarItems(trailing: Button(action: {

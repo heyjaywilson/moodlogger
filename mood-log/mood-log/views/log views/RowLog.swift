@@ -9,9 +9,10 @@
 import SwiftUI
 
 struct RowLog: View {
+    var log: LogEntity
     var body: some View {
         HStack{
-            DateRow()
+            DateRow(month: log.date!.returnShortMonth(), day: log.date!.returnDayAsString())
             VStack{
                 Text("Moods")
                 HStack{
@@ -25,11 +26,5 @@ struct RowLog: View {
             }
             SlotOne()
         }
-    }
-}
-
-struct RowLog_Previews: PreviewProvider {
-    static var previews: some View {
-        RowLog()
     }
 }
