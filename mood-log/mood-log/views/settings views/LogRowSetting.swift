@@ -10,20 +10,19 @@ import SwiftUI
 
 struct LogRowSetting: View {
     @Environment(\.managedObjectContext) var context
+    @State private var slot1Select: Int = 0
     
     var body: some View {
-        VStack{
+        List{
             RowLog(log: LogEntity(context: context))
-            ScrollView{
-                Text("LARGE TEXT IS HERE. I'm trying something now")
-                    .font(.largeTitle)
-                Text("LARGE TEXT IS HERE. I'm trying something now")
-                    .font(.largeTitle)
-                Text("LARGE TEXT IS HERE. I'm trying something now")
-                    .font(.largeTitle)
-                Text("LARGE TEXT IS HERE. I'm trying something now")
-                    .font(.largeTitle)
-            }
+            Picker(selection: $slot1Select, label: Text("Slot 1")) {
+                Text("Activity Summary").tag(0)
+                Text("Water Intake").tag(1)
+            }.pickerStyle(WheelPickerStyle())
+            Text("Slot 2")
+            Text("Slot 3")
+            Text("Slot 4")
+            Text("Slot 5")
         }
         .navigationBarTitle("Row Settings", displayMode: .inline)
     }
