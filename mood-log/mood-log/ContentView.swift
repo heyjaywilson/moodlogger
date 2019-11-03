@@ -12,7 +12,7 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var context
     @EnvironmentObject var logman: LogManager
     
-    @State private var selection = 0
+    @State private var selection = 1
     
     var body: some View {
         TabView(selection: $selection){
@@ -25,6 +25,14 @@ struct ContentView: View {
                     }
             }
             .tag(0)
+            AllSettings()
+                .environment(\.managedObjectContext, context)
+                .tabItem{
+                    VStack{
+                        Image(systemName: "gear")
+                    }
+                }
+                .tag(1)
         }
     }
 }

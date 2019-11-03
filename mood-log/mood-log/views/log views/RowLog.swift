@@ -12,7 +12,7 @@ struct RowLog: View {
     var log: LogEntity
     var body: some View {
         HStack{
-            DateRow(month: log.date!.returnShortMonth(), day: log.date!.returnDayAsString())
+            DateRow(month: getMonth(), day: getDay())
             VStack{
                 Text("Moods")
                 HStack{
@@ -26,5 +26,19 @@ struct RowLog: View {
             }
             SlotOne()
         }
+    }
+    
+    func getMonth() -> String {
+        guard let date = log.date else {
+            return Date().returnShortMonth()
+        }
+        return date.returnShortMonth()
+    }
+    
+    func getDay() -> String {
+        guard let date = log.date else {
+            return Date().returnDayAsString()
+        }
+        return date.returnDayAsString()
     }
 }

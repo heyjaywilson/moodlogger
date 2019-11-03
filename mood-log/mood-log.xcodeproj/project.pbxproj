@@ -16,6 +16,8 @@
 		37175C39236C51CF003B34BB /* DateRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37175C38236C51CF003B34BB /* DateRow.swift */; };
 		37175C3B236C5654003B34BB /* LogNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37175C3A236C5654003B34BB /* LogNew.swift */; };
 		37175C3D236C56AE003B34BB /* MoodPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37175C3C236C56AE003B34BB /* MoodPicker.swift */; };
+		37175C40236D3126003B34BB /* AllSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37175C3F236D3126003B34BB /* AllSettings.swift */; };
+		37175C42236D31F9003B34BB /* LogRowSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37175C41236D31F9003B34BB /* LogRowSetting.swift */; };
 		3721DEA8234C348E004688DD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEA7234C348E004688DD /* AppDelegate.swift */; };
 		3721DEAA234C348E004688DD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEA9234C348E004688DD /* SceneDelegate.swift */; };
 		3721DEAD234C348E004688DD /* mood_log.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3721DEAB234C348E004688DD /* mood_log.xcdatamodeld */; };
@@ -43,6 +45,8 @@
 		37175C38236C51CF003B34BB /* DateRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateRow.swift; sourceTree = "<group>"; };
 		37175C3A236C5654003B34BB /* LogNew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogNew.swift; sourceTree = "<group>"; };
 		37175C3C236C56AE003B34BB /* MoodPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodPicker.swift; sourceTree = "<group>"; };
+		37175C3F236D3126003B34BB /* AllSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllSettings.swift; sourceTree = "<group>"; };
+		37175C41236D31F9003B34BB /* LogRowSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRowSetting.swift; sourceTree = "<group>"; };
 		3721DEA4234C348E004688DD /* mood-log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mood-log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3721DEA7234C348E004688DD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3721DEA9234C348E004688DD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +100,15 @@
 			path = "row views";
 			sourceTree = "<group>";
 		};
+		37175C3E236D3116003B34BB /* settings views */ = {
+			isa = PBXGroup;
+			children = (
+				37175C3F236D3126003B34BB /* AllSettings.swift */,
+				37175C41236D31F9003B34BB /* LogRowSetting.swift */,
+			);
+			path = "settings views";
+			sourceTree = "<group>";
+		};
 		3721DE9B234C348E004688DD = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +155,7 @@
 		3721DEBF234C34C9004688DD /* views */ = {
 			isa = PBXGroup;
 			children = (
+				37175C3E236D3116003B34BB /* settings views */,
 				376DFF6A236A863F007C2EC2 /* log views */,
 			);
 			path = views;
@@ -273,6 +287,7 @@
 				3721DEAF234C348E004688DD /* ContentView.swift in Sources */,
 				37175C3D236C56AE003B34BB /* MoodPicker.swift in Sources */,
 				3721DEAD234C348E004688DD /* mood_log.xcdatamodeld in Sources */,
+				37175C40236D3126003B34BB /* AllSettings.swift in Sources */,
 				376DFF6E236A86AC007C2EC2 /* RowLog.swift in Sources */,
 				37175C31236C5177003B34BB /* SlotTwo.swift in Sources */,
 				37175C3B236C5654003B34BB /* LogNew.swift in Sources */,
@@ -286,6 +301,7 @@
 				37175C39236C51CF003B34BB /* DateRow.swift in Sources */,
 				37BE4946235C1873007C9BBE /* ActivitySum.swift in Sources */,
 				37175C37236C51AA003B34BB /* SlotFive.swift in Sources */,
+				37175C42236D31F9003B34BB /* LogRowSetting.swift in Sources */,
 				37175C33236C5186003B34BB /* SlotThree.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
