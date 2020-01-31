@@ -9,36 +9,37 @@
 import SwiftUI
 
 struct RowLog: View {
-    var log: LogEntity
-    var body: some View {
+  let moods = MoodManager()
+  var log: LogEntity
+  var body: some View {
+    HStack{
+      DateRow(month: getMonth(), day: getDay())
+      VStack(alignment: .leading){
+        Moods(moods: moods.getMood(log: log))
         HStack{
-            DateRow(month: getMonth(), day: getDay())
-            VStack{
-                Text("Moods")
-                HStack{
-                    SlotTwo()
-                    SlotThree()
-                }
-                HStack{
-                    SlotFour()
-                    SlotFive()
-                }
-            }
-            SlotOne()
+          SlotTwo()
+          SlotThree()
         }
-    }
-    
-    func getMonth() -> String {
-        guard let date = log.date else {
-            return Date().returnShortMonth()
+        HStack{
+          SlotFour()
+          SlotFive()
         }
-        return date.returnShortMonth()
+      }
+      SlotOne()
     }
-    
-    func getDay() -> String {
-        guard let date = log.date else {
-            return Date().returnDayAsString()
-        }
-        return date.returnDayAsString()
+  }
+  
+  func getMonth() -> String {
+    guard let date = log.date else {
+      return Date().returnShortMonth()
     }
+    return date.returnShortMonth()
+  }
+  
+  func getDay() -> String {
+    guard let date = log.date else {
+      return Date().returnDayAsString()
+    }
+    return date.returnDayAsString()
+  }
 }

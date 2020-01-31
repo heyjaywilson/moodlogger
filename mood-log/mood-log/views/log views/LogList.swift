@@ -9,32 +9,37 @@
 import SwiftUI
 
 struct LogList: View {
-    @Environment(\.managedObjectContext) var context
-    @EnvironmentObject var logman: LogManager
-    @State private var showNewLogForm: Bool = false
-    
-    var body: some View {
-        NavigationView{
-            List {
-                ForEach(logman.allLogs) { log in
-                    RowLog(log: log)
-                }
-            }
-            .navigationBarTitle("Logs")
-            .navigationBarItems(trailing: Button(action: {
-                self.showNewLogForm = true
-            }){
-                Text("Add Log")
-            }.sheet(isPresented: $showNewLogForm, content: {
-                LogNew().environmentObject(self.logman)
-            })
-            )
+  @Environment(\.managedObjectContext) var context
+  @EnvironmentObject var logman: LogManager
+  @State private var showNewLogForm: Bool = false
+  
+  @FetchRequest(
+    entity: LogEntity.entity(),
+    sortDescriptors: [NSSortDescriptor(keyPath: \LogEntity.date, ascending: false)]
+  ) var logs: FetchedResults<LogEntity>
+  
+  var body: some View {
+    NavigationView{
+      List {
+        ForEach(logs, id: \.self) { log in
+          RowLog(log: log)
         }
+      }
+      .navigationBarTitle("Logs")
+      .navigationBarItems(trailing: Button(action: {
+        self.showNewLogForm = true
+      }){
+        Text("Add Log")
+      }.sheet(isPresented: $showNewLogForm, content: {
+        LogNew().environmentObject(self.logman)
+      })
+      )
     }
+  }
 }
 
 struct LogList_Previews: PreviewProvider {
-    static var previews: some View {
-        LogList()
-    }
+  static var previews: some View {
+    LogList()
+  }
 }

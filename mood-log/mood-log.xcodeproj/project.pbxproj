@@ -26,6 +26,7 @@
 		3721DEB4234C3490004688DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3721DEB3234C3490004688DD /* Preview Assets.xcassets */; };
 		3721DEB7234C3490004688DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3721DEB5234C3490004688DD /* LaunchScreen.storyboard */; };
 		3737109523E45A0B006E0D0A /* Moods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737109423E45A0B006E0D0A /* Moods.swift */; };
+		3737109923E45C02006E0D0A /* MoodManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3737109823E45C02006E0D0A /* MoodManager.swift */; };
 		37498356235FFA6E005D01A0 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37498355235FFA6E005D01A0 /* LogManager.swift */; };
 		376DFF6C236A865B007C2EC2 /* LogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376DFF6B236A865B007C2EC2 /* LogList.swift */; };
 		376DFF6E236A86AC007C2EC2 /* RowLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 376DFF6D236A86AC007C2EC2 /* RowLog.swift */; };
@@ -58,6 +59,7 @@
 		3721DEB6234C3490004688DD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3721DEB8234C3490004688DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3737109423E45A0B006E0D0A /* Moods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moods.swift; sourceTree = "<group>"; };
+		3737109823E45C02006E0D0A /* MoodManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodManager.swift; sourceTree = "<group>"; };
 		37498355235FFA6E005D01A0 /* LogManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		376DFF6B236A865B007C2EC2 /* LogList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogList.swift; sourceTree = "<group>"; };
 		376DFF6D236A86AC007C2EC2 /* RowLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowLog.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				378B97D7234DFB5E00740314 /* healthInfo */,
 				378B97D2234D788B00740314 /* coredata */,
 				37498355235FFA6E005D01A0 /* LogManager.swift */,
+				3737109823E45C02006E0D0A /* MoodManager.swift */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 				37175C35236C5196003B34BB /* SlotFour.swift in Sources */,
 				378B97DB234E033E00740314 /* HealthSamples.swift in Sources */,
 				378B97D9234DFB8000740314 /* HealthKitAuth.swift in Sources */,
+				3737109923E45C02006E0D0A /* MoodManager.swift in Sources */,
 				37FC811F235DD67B00CF56BC /* LogEntity+Extension.swift in Sources */,
 				37498356235FFA6E005D01A0 /* LogManager.swift in Sources */,
 				37175C2F236C515A003B34BB /* SlotOne.swift in Sources */,

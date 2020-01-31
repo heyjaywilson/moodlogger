@@ -9,13 +9,8 @@
 import SwiftUI
 
 struct Moods: View {
+  var moods: String
   var body: some View {
-    Text("Hello, World!")
-  }
-}
-
-struct Moods_Previews: PreviewProvider {
-  static var previews: some View {
-    Moods()
+    Text(moods)
   }
 }
