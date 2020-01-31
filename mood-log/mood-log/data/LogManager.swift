@@ -19,6 +19,8 @@ class LogManager: ObservableObject {
       self.objectWillChange.send()
     }
   }
+
+// TODO: Don't initialize with ManagedObject Context
   
   init(mc: NSManagedObjectContext){
     managedContext = mc
